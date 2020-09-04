@@ -5,19 +5,36 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "lint": "eslint --fix --ext .js,.jsx,.ts,.tsx --ignore-path .gitignore ."
   },
   "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^3.2.0",
+    "@typescript-eslint/parser": "^3.2.0",
+    "eslint": "^7.2.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.3",
+    "eslint-plugin-react": "^7.20.0",
+    "gray-matter": "^4.0.2",
+    "husky": "^4.2.5",
     "next": "9.5.2",
     "postcss-flexbugs-fixes": "^4.2.1",
     "postcss-preset-env": "^6.7.0",
+    "prettier": "^2.0.5",
     "react": "16.13.1",
     "react-dom": "16.13.1",
+    "remark": "^12.0.1",
+    "remark-html": "^12.0.0",
     "tailwindcss": "^1.7.6"
   },
   "devDependencies": {
     "@types/node": "^14.6.2",
     "@types/react": "^16.9.49",
     "typescript": "^4.0.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn run lint"
+    }
   }
 }

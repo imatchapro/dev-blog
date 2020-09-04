@@ -1,12 +1,10 @@
-import Head from 'next/head'
+import React from 'react'
+import PageHead from '../components/templates/PageHead'
 
 export default function Home() {
   return (
     <div>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <PageHead description={} image={} url={} />
     </div>
   )
 }

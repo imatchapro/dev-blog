@@ -1,7 +1,7 @@
-import "../styles/index.css"
-import Layout from "../components/templates/Layout";
+import '../styles/index.css'
+import Layout from '../components/templates/Layout'
 
-function MyApp({Component, pageProps}) {
+function MyApp({ Component, pageProps }) {
   return (
     <Layout>
       <Component {...pageProps} />
