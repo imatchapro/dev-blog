@@ -8,7 +8,13 @@
 
 /* Write you own custom component styles here */
 body {
-  @apply text-gray-800 leading-relaxed font-light
+  @apply text-gray-800 leading-relaxed font-light text-sm
+}
+
+@screen sm {
+  body {
+    @apply text-base
+  }
 }
 
 .transition-navigation {

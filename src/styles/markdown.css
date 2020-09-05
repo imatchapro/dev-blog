@@ -12,27 +12,53 @@
 }
 
 .markdown h1 {
-  @apply mt-12 mb-6 text-3xl
-}
-
-.markdown h2 {
   @apply mt-12 mb-6 text-2xl
 }
 
-.markdown h3 {
-  @apply mt-10 mb-6 text-xl
+.markdown h2 {
+  @apply mt-12 mb-6 text-xl
 }
 
-.markdown h4 {
+.markdown h3 {
   @apply mt-10 mb-6 text-lg
 }
 
+.markdown h4 {
+  @apply mt-10 mb-6 text-base
+}
+
 .markdown h5 {
-  @apply mt-8 mb-4 text-base
+  @apply mt-8 mb-4 text-sm
 }
 
 .markdown h6 {
-  @apply mt-8 mb-4 text-sm
+  @apply mt-8 mb-4 text-xs
+}
+
+@screen sm {
+  .markdown h1 {
+    @apply text-3xl
+  }
+
+  .markdown h2 {
+    @apply text-2xl
+  }
+
+  .markdown h3 {
+    @apply text-xl
+  }
+
+  .markdown h4 {
+    @apply text-lg
+  }
+
+  .markdown h5 {
+    @apply text-base
+  }
+
+  .markdown h6 {
+    @apply text-sm
+  }
 }
 
 .markdown > p {

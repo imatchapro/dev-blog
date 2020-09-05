@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
+import { HiCursorClick } from 'react-icons/hi'
 import TextFormatDate from '../atoms/TextFormatDate'
 import { PostsData } from '../../types'
 
@@ -19,8 +20,9 @@ const BlogPostList: React.FC<Props> = ({ postsData }) => {
               </p>
               <h2 className="text-xl font-bold mt-1">{title}</h2>
               <p className="text-sm text-gray-600 mt-2">{description}</p>
-              <p className="text-blue-600 text-sm font-semibold mt-4">
-                Read more this post
+              <p className="text-blue-600 font-semibold mt-4 flex items-center">
+                <span className="mr-2 text-sm">Read more this post</span>
+                <HiCursorClick />
               </p>
             </a>
           </Link>
