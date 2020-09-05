@@ -1,19 +1,20 @@
-import React from 'react';
-import Link from 'next/link';
+import React from 'react'
+import Link from 'next/link'
 
 type Props = {
-  path: string,
-  children: string
+  path: string
 }
 
-const HeaderNavItem: React.FC<Props> = ({path, children}) => {
+const HeaderNavItem: React.FC<Props> = ({ path, children }) => {
   return (
-    <li className="ml-3 first:ml-0">
+    <li className="ml-4 first:ml-0">
       <Link href={path}>
-        <a className="text-gray-600 text-sm font-medium hover:text-gray-800">{children}</a>
+        <a className="text-gray-600 text-sm font-medium transition-navigation hover:text-gray-800">
+          {children}
+        </a>
       </Link>
     </li>
-  );
-};
+  )
+}
 
-export default HeaderNavItem;
+export default HeaderNavItem

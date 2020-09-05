@@ -1,17 +1,16 @@
-import React from 'react';
-import HeaderNavItem from "../atoms/HeaderNavItem";
+import React from 'react'
+import HeaderNavItem from '../atoms/HeaderNavItem'
 
 const HeaderNavigation: React.FC = () => {
   return (
     <nav className="ml-auto">
       <ul className="flex">
-        <HeaderNavItem path="">Docs</HeaderNavItem>
-        <HeaderNavItem path="">Blog</HeaderNavItem>
-        <HeaderNavItem path="">Contact</HeaderNavItem>
+        <HeaderNavItem path="/blog">Blog</HeaderNavItem>
+        <HeaderNavItem path="/works">Works</HeaderNavItem>
+        <HeaderNavItem path="/contact">Contact</HeaderNavItem>
       </ul>
     </nav>
-  );
-};
+  )
+}
 
-export default HeaderNavigation;
-
+export default HeaderNavigation

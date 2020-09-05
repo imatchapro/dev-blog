@@ -1,0 +1,92 @@
+import fs from 'fs'
+import path from 'path'
+import matter from 'gray-matter'
+import remark from 'remark'
+import html from 'remark-html'
+import { PostFrontMatterData } from '../types'
+
+const COUNT_PER_PAGE = 10
+
+const postsDirectory = path.join(process.cwd(), 'src/posts')
+
+export function getSortedPostsData() {
+  const fileNames = fs.readdirSync(postsDirectory)
+  const allPostsData = fileNames.map((fileName) => {
+    const id = fileName.replace(/\.md$/, '')
+    const fullPath = path.join(postsDirectory, fileName)
+    const fileContents = fs.readFileSync(fullPath, 'utf8')
+    const matterResult = matter(fileContents)
+
+    return {
+      id,
+      ...(matterResult.data as PostFrontMatterData),
+    }
+  })
+
+  return allPostsData.sort((a, b) => {
+    if (a.date < b.date) {
+      return 1
+    } else {
+      return -1
+    }
+  })
+}
+
+export function getSplitPostsData(page: number) {
+  const sortedPostsData = getSortedPostsData()
+  const length = getSplitPostsDataLength()
+  const splitPostsData = new Array(length).fill(undefined).map((_, i) => {
+    return sortedPostsData.slice(i * COUNT_PER_PAGE, (i + 1) * COUNT_PER_PAGE)
+  })
+
+  splitPostsData.unshift([])
+
+  return splitPostsData[page]
+}
+
+export function getSplitPostsDataLength() {
+  const postDataNum = getSortedPostsData().length
+
+  return Math.ceil(postDataNum / COUNT_PER_PAGE)
+}
+
+export function getAllPostsPages() {
+  const length = getSplitPostsDataLength()
+  const allPostsPages = new Array(length)
+    .fill(undefined)
+    .map((_, i) => `${i + 1}`)
+
+  allPostsPages.splice(0, 1)
+
+  return allPostsPages.map((page) => ({
+    params: {
+      page: page,
+    },
+  }))
+}
+
+export function getAllPostsIds() {
+  const fileNames = fs.readdirSync(postsDirectory)
+
+  return fileNames.map((fileName) => ({
+    params: {
+      id: fileName.replace(/\.md$/, ''),
+    },
+  }))
+}
+
+export async function getPostData(id: string | string[]) {
+  const fullPath = path.join(postsDirectory, `${id}.md`)
+  const fileContents = fs.readFileSync(fullPath, 'utf8')
+  const matterResult = matter(fileContents)
+  const processedContent = await remark()
+    .use(html)
+    .process(matterResult.content)
+  const contentHtml = processedContent.toString()
+
+  return {
+    id,
+    contentHtml,
+    ...(matterResult.data as PostFrontMatterData),
+  }
+}
