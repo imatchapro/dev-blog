@@ -6,7 +6,10 @@ type Props = {
 
 const TextFormLabel: React.FC<Props> = ({ htmlFor, children }) => {
   return (
-    <label className="text-gray-600 text-xl py-1 w-1/5" htmlFor={htmlFor}>
+    <label
+      className="block text-gray-600 mb-1 sm:text-xl sm:mb-0 sm:w-1/5 sm:py-1"
+      htmlFor={htmlFor}
+    >
       {children}
     </label>
   )
