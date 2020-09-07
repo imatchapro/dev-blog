@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react'
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
-import Link from 'next/link'
 import Prism from 'prismjs'
 import { getAllPostsIds, getPostData } from '../../lib/posts'
 import BlogPagination from '../../components/molecules/BlogPagination'
 import HeadingPostPage from '../../components/atoms/HeadingPostPage'
+import LinkBackPage from '../../components/atoms/LinkBackPage'
+import TextFormatDate from '../../components/atoms/TextFormatDate'
 import { PostContentData } from '../../types'
 
 type Props = {
@@ -18,18 +19,21 @@ const BlogPost: NextPage<Props> = ({ postData }) => {
 
   return (
     <article>
-      <HeadingPostPage>{postData.title}</HeadingPostPage>
-      <p className="mt-6 text-gray-600 sm:mt-10">{postData.description}</p>
+      <section>
+        <p className="text-gray-600 mb-3">
+          <TextFormatDate dateString={postData.date} />
+        </p>
+        <HeadingPostPage>{postData.title}</HeadingPostPage>
+        <p className="text-gray-600 text-base mt-6 sm:text-lg">
+          {postData.description}
+        </p>
+      </section>
       <section
         className="markdown"
         dangerouslySetInnerHTML={{ __html: postData.contentHtml }}
       />
       <BlogPagination>
-        <Link href={'/blog'}>
-          <a className="mr-auto text-gray-600 text-sm font-semibold transition-navigation hover:text-gray-800">
-            Back post list
-          </a>
-        </Link>
+        <LinkBackPage href={'/blog'} />
       </BlogPagination>
     </article>
   )

@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
+import { FiChevronLeft } from 'react-icons/fi'
 
 type Props = {
   href: string
@@ -9,8 +10,9 @@ type Props = {
 const LinkPrevPage: React.FC<Props> = ({ href, as }) => {
   return (
     <Link href={href} as={as}>
-      <a className="mr-auto text-gray-600 text-sm font-semibold transition-navigation hover:text-gray-800">
-        Prev page
+      <a className="mr-auto blog-nav-link transition-navigation">
+        <FiChevronLeft />
+        <span className="ml-2">Previous</span>
       </a>
     </Link>
   )
