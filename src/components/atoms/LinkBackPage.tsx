@@ -1,19 +1,18 @@
 import React from 'react'
-import Link from 'next/link'
 import { FiArrowLeft } from 'react-icons/fi'
+import { useRouter } from 'next/router'
 
-type Props = {
-  href: string
-}
+const LinkBackPage: React.FC = () => {
+  const router = useRouter()
 
-const LinkBackPage: React.FC<Props> = ({ href }) => {
   return (
-    <Link href={href}>
-      <a className="mr-auto blog-nav-link transition-navigation">
-        <FiArrowLeft />
-        <span className="ml-2">Back</span>
-      </a>
-    </Link>
+    <button
+      onClick={() => router.back()}
+      className="mr-auto blog-nav-link transition-navigation"
+    >
+      <FiArrowLeft />
+      <span className="ml-2">Back</span>
+    </button>
   )
 }
 

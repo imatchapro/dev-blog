@@ -9,7 +9,7 @@ const COUNT_PER_PAGE = 10
 
 const postsDirectory = path.join(process.cwd(), 'src/posts')
 
-export function getSortedPostsData() {
+export function getSortedPostsData(): { id: string }[] {
   const fileNames = fs.readdirSync(postsDirectory)
   const allPostsData = fileNames.map((fileName) => {
     const id = fileName.replace(/\.md$/, '')
@@ -32,7 +32,7 @@ export function getSortedPostsData() {
   })
 }
 
-export function getSplitPostsData(page: number) {
+export function getSplitPostsData(page: number): { id: string }[] {
   const sortedPostsData = getSortedPostsData()
   const length = getSplitPostsDataLength()
   const splitPostsData = new Array(length).fill(undefined).map((_, i) => {
@@ -44,13 +44,13 @@ export function getSplitPostsData(page: number) {
   return splitPostsData[page]
 }
 
-export function getSplitPostsDataLength() {
+export function getSplitPostsDataLength(): number {
   const postDataNum = getSortedPostsData().length
 
   return Math.ceil(postDataNum / COUNT_PER_PAGE)
 }
 
-export function getAllPostsPages() {
+export function getAllPostsPages(): { params: { page: string } }[] {
   const length = getSplitPostsDataLength()
   const allPostsPages = new Array(length)
     .fill(undefined)
@@ -65,7 +65,7 @@ export function getAllPostsPages() {
   }))
 }
 
-export function getAllPostsIds() {
+export function getAllPostsIds(): { params: { id: string } }[] {
   const fileNames = fs.readdirSync(postsDirectory)
 
   return fileNames.map((fileName) => ({
@@ -75,7 +75,9 @@ export function getAllPostsIds() {
   }))
 }
 
-export async function getPostData(id: string | string[]) {
+export async function getPostData(
+  id: string | string[]
+): Promise<{ id: string | string[]; contentHtml: string }> {
   const fullPath = path.join(postsDirectory, `${id}.md`)
   const fileContents = fs.readFileSync(fullPath, 'utf8')
   const matterResult = matter(fileContents)

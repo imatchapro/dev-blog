@@ -9,6 +9,7 @@ import HeadingPage from '../components/atoms/HeadingPage'
 import ButtonFormSubmit from '../components/atoms/ButtonFormSubmit'
 import TextInformation from '../components/atoms/TextInformation'
 import TextAlert from '../components/atoms/TextAlert'
+import { useRouter } from 'next/router'
 
 type FormValues = {
   name: string
@@ -32,6 +33,7 @@ const Contact: NextPage = () => {
   }
   const [response, setResponse] = useState<ResponseMessage>(resInitMessage)
   const { register, handleSubmit, errors } = useForm<FormValues>()
+  const router = useRouter()
 
   const resetForm = () => {
     const form = document.getElementById('contact-form') as HTMLFormElement
@@ -53,7 +55,13 @@ const Contact: NextPage = () => {
       const json = await res.json()
 
       if (json.success) {
-        resetForm()
+        await resetForm()
+        await router.push({
+          pathname: '/thanks',
+          query: {
+            name: values.name,
+          },
+        })
       } else {
         setResponse(resErrorMessage)
       }
@@ -71,6 +79,7 @@ const Contact: NextPage = () => {
             <TextFormLabel htmlFor="name">Name</TextFormLabel>
             <div className="sm:w-4/5">
               <input
+                id="name"
                 className={
                   errors.name ? 'form-input-area-error' : 'form-input-area'
                 }
@@ -88,6 +97,7 @@ const Contact: NextPage = () => {
             <TextFormLabel htmlFor="email">Email</TextFormLabel>
             <div className="sm:w-4/5">
               <input
+                id="email"
                 className={
                   errors.email ? 'form-input-area-error' : 'form-input-area'
                 }
@@ -110,6 +120,7 @@ const Contact: NextPage = () => {
             <TextFormLabel htmlFor="message">Message</TextFormLabel>
             <div className="sm:w-4/5">
               <textarea
+                id="message"
                 className={
                   errors.message ? 'form-input-area-error' : 'form-input-area'
                 }

@@ -33,7 +33,7 @@ const BlogPost: NextPage<Props> = ({ postData }) => {
         dangerouslySetInnerHTML={{ __html: postData.contentHtml }}
       />
       <BlogPagination>
-        <LinkBackPage href={'/blog'} />
+        <LinkBackPage />
       </BlogPagination>
     </article>
   )
