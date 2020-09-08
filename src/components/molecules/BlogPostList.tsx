@@ -13,7 +13,7 @@ const BlogPostList: React.FC<Props> = ({ postsData }) => {
     <ul>
       {postsData.map(({ date, description, id, title }) => (
         <li className="mt-12 first:mt-0" key={id}>
-          <p className="text-xs ">
+          <p className="text-xs">
             <TextFormatDate dateString={date} />
           </p>
           <h2 className="text-gray-800 text-xl font-bold mt-1">
@@ -24,7 +24,7 @@ const BlogPostList: React.FC<Props> = ({ postsData }) => {
           <p className="text-sm  mt-3">{description}</p>
           <p className="mt-4">
             <Link href={'/blog/[id]'} as={`/blog/${id}`}>
-              <a className="text-blue-600 text-xs font-semibold inline-flex items-center hover:text-blue-400 transition-navigation">
+              <a className="text-blue-600 text-xs font-semibold inline-flex items-center transition-navigation hover:text-blue-400 sm:text-sm">
                 <FiLink />
                 <span className="ml-1">この記事を見る</span>
               </a>

@@ -12,7 +12,7 @@ body {
 }
 
 .blog-nav-link {
-  @apply inline-flex items-center font-semibold;
+  @apply inline-flex items-center font-medium;
 }
 
 .blog-nav-link:hover {
