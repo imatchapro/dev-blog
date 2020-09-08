@@ -13,15 +13,15 @@ const BlogPostList: React.FC<Props> = ({ postsData }) => {
     <ul>
       {postsData.map(({ date, description, id, title }) => (
         <li className="mt-12 first:mt-0" key={id}>
-          <p className="text-xs text-gray-600">
+          <p className="text-xs ">
             <TextFormatDate dateString={date} />
           </p>
-          <h2 className="text-xl font-bold mt-1">
+          <h2 className="text-gray-800 text-xl font-bold mt-1">
             <Link href={'/blog/[id]'} as={`/blog/${id}`}>
               <a>{title}</a>
             </Link>
           </h2>
-          <p className="text-sm text-gray-600 mt-2">{description}</p>
+          <p className="text-sm  mt-3">{description}</p>
           <p className="mt-4">
             <Link href={'/blog/[id]'} as={`/blog/${id}`}>
               <a className="text-blue-600 text-xs font-semibold inline-flex items-center hover:text-blue-400 transition-navigation">

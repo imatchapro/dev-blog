@@ -1,5 +1,5 @@
 .markdown {
-  @apply mt-12 text-gray-600
+  @apply mt-12;
 }
 
 .markdown h1,
@@ -8,125 +8,125 @@
 .markdown h4,
 .markdown h5,
 .markdown h6 {
-  @apply text-gray-800 font-bold
+  @apply text-gray-800 font-bold;
 }
 
 .markdown h1 {
-  @apply mt-12 mb-6 text-2xl
+  @apply mt-12 mb-6 text-2xl;
 }
 
 .markdown h2 {
-  @apply mt-12 mb-6 text-xl
+  @apply mt-12 mb-6 text-xl;
 }
 
 .markdown h3 {
-  @apply mt-10 mb-6 text-lg
+  @apply mt-10 mb-6 text-lg;
 }
 
 .markdown h4 {
-  @apply mt-10 mb-6 text-base
+  @apply mt-10 mb-6 text-base;
 }
 
 .markdown h5 {
-  @apply mt-8 mb-4 text-sm
+  @apply mt-8 mb-4 text-sm;
 }
 
 .markdown h6 {
-  @apply mt-8 mb-4 text-xs
+  @apply mt-8 mb-4 text-xs;
 }
 
 @screen sm {
   .markdown h1 {
-    @apply text-3xl
+    @apply text-3xl;
   }
 
   .markdown h2 {
-    @apply text-2xl
+    @apply text-2xl;
   }
 
   .markdown h3 {
-    @apply text-xl
+    @apply text-xl;
   }
 
   .markdown h4 {
-    @apply text-lg
+    @apply text-lg;
   }
 
   .markdown h5 {
-    @apply text-base
+    @apply text-base;
   }
 
   .markdown h6 {
-    @apply text-sm
+    @apply text-sm;
   }
 }
 
 .markdown > p {
-  @apply my-6
+  @apply my-6;
 }
 
 .markdown blockquote {
-  @apply my-6 border-l-4 pl-4 text-gray-500 font-normal
+  @apply my-6 border-l-4 pl-4 text-gray-500 font-normal;
 }
 
 .markdown blockquote p {
-  @apply my-6
+  @apply my-6;
 }
 
 .markdown a[href] {
-  @apply text-blue-600 font-normal
+  @apply text-blue-600 font-normal;
 }
 
 .markdown code {
-  @apply bg-gray-200 rounded px-2 py-1 text-xs
+  @apply bg-gray-200 rounded px-2 py-1 text-xs;
 }
 
 .markdown pre {
-  @apply my-6 bg-gray-200 rounded p-4 overflow-auto
+  @apply my-6 bg-gray-200 rounded p-4 overflow-auto;
 }
 
 .markdown pre code {
-  @apply rounded-none p-0
+  @apply rounded-none p-0;
 }
 
 .markdown ul {
-  @apply list-disc list-outside my-6 pl-4
+  @apply list-disc list-outside my-6 pl-4;
 }
 
 .markdown ol {
-  @apply list-decimal list-outside my-6 pl-4
+  @apply list-decimal list-outside my-6 pl-4;
 }
 
 .markdown li > ul {
-  @apply pl-4
+  @apply pl-4;
 }
 
 .markdown li > ol {
-  @apply pl-4
+  @apply pl-4;
 }
 
 .markdown img {
-  @apply max-w-full
+  @apply max-w-full;
 }
 
 @screen sm {
   .markdown ul {
-    @apply pl-5
+    @apply pl-5;
   }
 
   .markdown ol {
-    @apply pl-5
+    @apply pl-5;
   }
 
   .markdown li > ul {
-    @apply pl-5
+    @apply pl-5;
   }
 
   .markdown li > ol {
-    @apply pl-5
+    @apply pl-5;
   }
 
   .markdown code {
-    @apply text-sm
+    @apply text-sm;
   }
 }

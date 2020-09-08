@@ -9,7 +9,7 @@ description: 'React製のフレームワーク「Next.js」を使用して静的
 これはテスト投稿です。
 
 ```javascript
-function hello(){
- return "hello world!";
+function hello() {
+  return 'hello world!'
 }
 ```

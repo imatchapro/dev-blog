@@ -20,13 +20,11 @@ const BlogPost: NextPage<Props> = ({ postData }) => {
   return (
     <article>
       <section>
-        <p className="text-gray-600 mb-3">
+        <p className=" mb-3">
           <TextFormatDate dateString={postData.date} />
         </p>
         <HeadingPostPage>{postData.title}</HeadingPostPage>
-        <p className="text-gray-600 text-base mt-6 sm:text-lg">
-          {postData.description}
-        </p>
+        <p className=" text-base mt-6 sm:text-lg">{postData.description}</p>
       </section>
       <section
         className="markdown"

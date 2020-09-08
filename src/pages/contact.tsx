@@ -1,15 +1,15 @@
 import React, { useState } from 'react'
 import { NextPage } from 'next'
+import { useRouter } from 'next/router'
 import { useForm, SubmitHandler } from 'react-hook-form'
+import ThePrivacyPolicy from '../components/organisms/ThePrivacyPolicy'
 import FormItem from '../components/molecules/FormItem'
-import BoxPrivacyPolicy from '../components/molecules/BoxPrivacyPolicy'
 import TextFormLabel from '../components/atoms/TextFormLabel'
 import TextFormError from '../components/atoms/TextFormError'
 import HeadingPage from '../components/atoms/HeadingPage'
 import ButtonFormSubmit from '../components/atoms/ButtonFormSubmit'
 import TextInformation from '../components/atoms/TextInformation'
 import TextAlert from '../components/atoms/TextAlert'
-import { useRouter } from 'next/router'
 
 type FormValues = {
   name: string
@@ -137,17 +137,19 @@ const Contact: NextPage = () => {
             </div>
           </FormItem>
           <input type="text" name="honeypot" className="hidden" />
-          <div className="mt-12">
-            <BoxPrivacyPolicy />
-            <div className="mt-3">
-              <TextInformation>
-                プライバシーポリシーに同意の上、送信してください。
-              </TextInformation>
-            </div>
+          <div className="mt-12 w-full h-40 py-6 px-4 border overflow-auto rounded sm:h-48 sm:py-8 sm:px-6">
+            <ThePrivacyPolicy />
           </div>
           <div className="mt-3">
-            {response.message && <TextAlert>{response.message}</TextAlert>}
+            <TextInformation>
+              プライバシーポリシーに同意の上、送信してください。
+            </TextInformation>
           </div>
+          {response.message && (
+            <div className="mt-3">
+              <TextAlert>{response.message}</TextAlert>
+            </div>
+          )}
           <div className="text-center mt-12">
             <ButtonFormSubmit />
           </div>

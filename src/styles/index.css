@@ -8,36 +8,40 @@
 
 /* Write you own custom component styles here */
 body {
-  @apply text-gray-800 leading-relaxed font-light text-sm
+  @apply text-gray-600 leading-relaxed font-light text-sm;
 }
 
 .blog-nav-link {
-  @apply inline-flex items-center text-gray-600 font-semibold
+  @apply inline-flex items-center font-semibold;
+}
+
+.blog-nav-link:hover {
+  @apply text-gray-800;
 }
 
 .form-input-area {
-  @apply w-full px-3 py-1 rounded leading-loose bg-gray-200 text-gray-600 align-middle
+  @apply w-full px-3 py-1 rounded leading-loose bg-gray-200  align-middle;
 }
 
 .form-input-area-error {
-  @apply w-full px-3 py-1 rounded leading-loose bg-red-200 align-middle
+  @apply w-full px-3 py-1 rounded leading-loose bg-red-200 align-middle;
 }
 
 .icon-button {
-  @apply inline-flex items-center px-6 py-2 bg-blue-600 text-white rounded text-sm
+  @apply inline-flex items-center px-6 py-2 bg-blue-600 text-white rounded text-sm;
 }
 
 .icon-button:hover {
-  @apply bg-blue-400
+  @apply bg-blue-400;
 }
 
 .transition-navigation {
-  @apply transition-colors duration-300 ease-in-out
+  @apply transition-colors duration-300 ease-in-out;
 }
 
 @screen sm {
   body {
-    @apply text-base
+    @apply text-base;
   }
 }
 

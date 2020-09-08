@@ -13,7 +13,7 @@ const Thanks: NextPage = () => {
     <section className="text-center">
       <HeadingPage>Thank you!!</HeadingPage>
       <div className="mt-12">
-        <p className="text-gray-600 text-xs whitespace-no-wrap leading-loose sm:text-sm">
+        <p className=" text-xs whitespace-no-wrap leading-loose sm:text-sm">
           お問い合わせいただきありがとうございます。
           <br />
           お問い合わせの内容を確認次第、
