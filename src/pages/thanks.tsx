@@ -15,7 +15,7 @@ const Thanks: NextPage = () => {
     <>
       <PageHead
         title="Thank you!!"
-        description="「Takahashi Yuta」のWEB開発ブログ兼ポートフォリオサイトのお問い合わせ完了ページ"
+        description="「Yuta Takahashi」のWEB開発ブログ兼ポートフォリオサイトのお問い合わせ完了ページ"
         type="website"
         image=""
       />

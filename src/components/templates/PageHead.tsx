@@ -8,7 +8,7 @@ type Props = {
   image: string
 }
 
-const site_name = 'Yuta Takahashi Developer Website'
+const site_name = '「Yuta Takahashi」のWEB開発ブログ兼ポートフォリオサイト'
 const twitter_id = '@takayu_dev'
 
 const PageHead: React.FC<Props> = ({
