@@ -1,14 +1,11 @@
 export type PostContentData = {
   id: string
-  date: string
+  published: string
   title: string
-  description: string
+  tldr: string
   contentHtml: string
 }
 
 export type PostsData = Omit<PostContentData, 'contentHtml'>
 
-export type PostFrontMatterData = Pick<
-  PostData,
-  'title' | 'date' | 'description'
->
+export type PostFrontMatterData = Pick<PostData, 'title' | 'published' | 'tldr'>

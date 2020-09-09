@@ -14,7 +14,7 @@ type Props = {
 }
 
 const BlogPost: NextPage<Props> = ({
-  postData: { contentHtml, date, description, title },
+  postData: { contentHtml, published, tldr, title },
 }) => {
   useEffect(() => {
     Prism.highlightAll()
@@ -22,19 +22,14 @@ const BlogPost: NextPage<Props> = ({
 
   return (
     <>
-      <PageHead
-        title={title}
-        description={description}
-        type="article"
-        image=""
-      />
+      <PageHead title={title} description={tldr} type="article" image="" />
       <article>
         <section>
           <p className="mb-3">
-            <TextFormatDate dateString={date} />
+            <TextFormatDate dateString={published} />
           </p>
           <HeadingPostPage>{title}</HeadingPostPage>
-          <p className=" text-base mt-6 sm:text-lg">{description}</p>
+          <p className="text-base mt-6 sm:text-lg">{tldr}</p>
         </section>
         <section
           className="markdown"

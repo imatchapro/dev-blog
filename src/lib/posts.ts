@@ -24,7 +24,7 @@ export function getSortedPostsData(): { id: string }[] {
   })
 
   return allPostsData.sort((a, b) => {
-    if (a.date < b.date) {
+    if (a.published < b.published) {
       return 1
     } else {
       return -1
