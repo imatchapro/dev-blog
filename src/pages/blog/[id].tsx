@@ -20,7 +20,7 @@ const BlogPost: NextPage<Props> = ({ postData }) => {
   return (
     <article>
       <section>
-        <p className=" mb-3">
+        <p className="mb-3">
           <TextFormatDate dateString={postData.date} />
         </p>
         <HeadingPostPage>{postData.title}</HeadingPostPage>

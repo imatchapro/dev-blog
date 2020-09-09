@@ -2,8 +2,9 @@ import React from 'react'
 import Link from 'next/link'
 import { NextPage } from 'next'
 import { useRouter } from 'next/router'
-import HeadingPage from '../components/atoms/HeadingPage'
 import { FiArrowUp } from 'react-icons/fi'
+import PageContents from '../components/molecules/PageContents'
+import HeadingPage from '../components/atoms/HeadingPage'
 
 const Thanks: NextPage = () => {
   const router = useRouter()
@@ -12,7 +13,7 @@ const Thanks: NextPage = () => {
   return (
     <section className="text-center">
       <HeadingPage>Thank you!!</HeadingPage>
-      <div className="mt-12">
+      <PageContents>
         <p className=" text-xs whitespace-no-wrap leading-loose sm:text-sm">
           お問い合わせいただきありがとうございます。
           <br />
@@ -33,7 +34,7 @@ const Thanks: NextPage = () => {
           <wbr />
           お気軽にメッセージを送ってください。
         </p>
-      </div>
+      </PageContents>
       <div className="mt-12">
         <Link href="/">
           <a className="icon-button transition-navigation">

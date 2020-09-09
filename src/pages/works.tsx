@@ -1,14 +1,15 @@
 import React from 'react'
 import { NextPage } from 'next'
+import PageContents from '../components/molecules/PageContents'
 import HeadingPage from '../components/atoms/HeadingPage'
 
 const Works: NextPage = () => {
   return (
     <section>
       <HeadingPage>Works</HeadingPage>
-      <div className="mt-12">
+      <PageContents>
         <p className=" text-xl font-medium">Coming soon ...</p>
-      </div>
+      </PageContents>
     </section>
   )
 }

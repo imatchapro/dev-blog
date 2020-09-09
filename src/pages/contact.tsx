@@ -3,6 +3,7 @@ import { NextPage } from 'next'
 import { useRouter } from 'next/router'
 import { useForm, SubmitHandler } from 'react-hook-form'
 import ThePrivacyPolicy from '../components/organisms/ThePrivacyPolicy'
+import PageContents from '../components/molecules/PageContents'
 import FormItem from '../components/molecules/FormItem'
 import TextFormLabel from '../components/atoms/TextFormLabel'
 import TextFormError from '../components/atoms/TextFormError'
@@ -73,7 +74,7 @@ const Contact: NextPage = () => {
   return (
     <section>
       <HeadingPage>Contact</HeadingPage>
-      <div className="mt-12">
+      <PageContents>
         <form id="contact-form" onSubmit={handleSubmit(onSubmit)} method="post">
           <FormItem>
             <TextFormLabel htmlFor="name">Name</TextFormLabel>
@@ -154,7 +155,7 @@ const Contact: NextPage = () => {
             <ButtonFormSubmit />
           </div>
         </form>
-      </div>
+      </PageContents>
     </section>
   )
 }

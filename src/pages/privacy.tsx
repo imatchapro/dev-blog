@@ -1,7 +1,8 @@
 import React from 'react'
 import { NextPage } from 'next'
-import HeadingPage from '../components/atoms/HeadingPage'
+import PageContents from '../components/molecules/PageContents'
 import SectionPrivacy from '../components/molecules/SectionPrivacy'
+import HeadingPage from '../components/atoms/HeadingPage'
 import HeadingPrivacy from '../components/atoms/HeadingPrivacy'
 import TextPrivacy from '../components/atoms/TextPrivacy'
 import ListDecimal from '../components/atoms/ListDecimal'
@@ -10,7 +11,7 @@ const Privacy: NextPage = () => {
   return (
     <section>
       <HeadingPage>Privacy Policy</HeadingPage>
-      <div className="mt-12">
+      <PageContents>
         <SectionPrivacy>
           <HeadingPrivacy>プライバシーポリシー</HeadingPrivacy>
           <TextPrivacy>
@@ -179,7 +180,7 @@ const Privacy: NextPage = () => {
             </li>
           </ListDecimal>
         </SectionPrivacy>
-      </div>
+      </PageContents>
     </section>
   )
 }

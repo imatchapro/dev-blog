@@ -1,6 +1,7 @@
 import React from 'react'
 import { GetStaticProps, NextPage } from 'next'
 import { getAllPostsPages, getSplitPostsData } from '../../lib/posts'
+import PageContents from '../../components/molecules/PageContents'
 import BlogPostList from '../../components/molecules/BlogPostList'
 import BlogPagination from '../../components/molecules/BlogPagination'
 import HeadingPage from '../../components/atoms/HeadingPage'
@@ -16,9 +17,9 @@ const Blog: NextPage<Props> = ({ postsData, nextDataExists }) => {
   return (
     <section>
       <HeadingPage>Blog</HeadingPage>
-      <div className="mt-12">
+      <PageContents>
         <BlogPostList postsData={postsData} />
-      </div>
+      </PageContents>
       {nextDataExists && (
         <BlogPagination>
           <LinkNextPage href={'/blog/page/[page]'} as={'/blog/page/2'} />

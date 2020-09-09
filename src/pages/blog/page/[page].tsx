@@ -5,6 +5,7 @@ import {
   getSplitPostsData,
   getSplitPostsDataLength,
 } from '../../../lib/posts'
+import PageContents from '../../../components/molecules/PageContents'
 import BlogPostList from '../../../components/molecules/BlogPostList'
 import BlogPagination from '../../../components/molecules/BlogPagination'
 import HeadingPage from '../../../components/atoms/HeadingPage'
@@ -26,9 +27,9 @@ const BlogPage: NextPage<Props> = ({
   return (
     <section>
       <HeadingPage>Blog</HeadingPage>
-      <div className="mt-12">
+      <PageContents>
         <BlogPostList postsData={postsData} />
-      </div>
+      </PageContents>
       <BlogPagination>
         <LinkPrevPage href={prevPageLink.href} as={prevPageLink.as} />
         {nextPageLink && (
