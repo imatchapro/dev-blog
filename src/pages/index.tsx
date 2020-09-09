@@ -7,7 +7,7 @@ import TheProfile from '../components/organisms/TheProfile'
 
 const Home: NextPage = () => (
   <>
-    <PageHead description={''} image={''} url={''} />
+    <PageHead title="トップページ" description="" type="website" image="" />
     <TheMainView />
     <TheContentsNavigation />
     <TheProfile />
