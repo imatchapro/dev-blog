@@ -15,7 +15,6 @@ const PageHead: React.FC<Props> = ({
   description,
   type,
   image,
-  children,
 }): JSX.Element => {
   const [url, setUrl] = useState<string>('')
 
@@ -43,7 +42,6 @@ const PageHead: React.FC<Props> = ({
       <link rel="icon" href="/favicon.ico" />
       <link rel="canonical" href={url} />
       <link rel="apple-touch-icon" href="" />
-      {children}
     </Head>
   )
 }
