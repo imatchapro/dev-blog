@@ -7,7 +7,12 @@ import TheProfile from '../components/organisms/TheProfile'
 
 const Home: NextPage = () => (
   <>
-    <PageHead title="トップページ" description="" type="website" image="" />
+    <PageHead
+      title="Home"
+      description="「Takahashi Yuta」のWEB開発ブログ兼ポートフォリオサイトのトップページ"
+      type="website"
+      image=""
+    />
     <TheMainView />
     <TheContentsNavigation />
     <TheProfile />

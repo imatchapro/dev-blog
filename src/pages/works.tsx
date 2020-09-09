@@ -2,15 +2,24 @@ import React from 'react'
 import { NextPage } from 'next'
 import PageContents from '../components/molecules/PageContents'
 import HeadingPage from '../components/atoms/HeadingPage'
+import PageHead from "../components/templates/PageHead";
 
 const Works: NextPage = () => {
   return (
-    <section>
-      <HeadingPage>Works</HeadingPage>
-      <PageContents>
-        <p className=" text-xl font-medium">Coming soon ...</p>
-      </PageContents>
-    </section>
+    <>
+      <PageHead
+        title="Works"
+        description="Takahashi YutaのWEB開発ブログ兼ポートフォリオサイトの実績一覧ページ"
+        type="website"
+        image=""
+      />
+      <section>
+        <HeadingPage>Works</HeadingPage>
+        <PageContents>
+          <p className=" text-xl font-medium">Coming soon ...</p>
+        </PageContents>
+      </section>
+    </>
   )
 }
 

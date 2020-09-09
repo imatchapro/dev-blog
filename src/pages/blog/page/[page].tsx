@@ -12,6 +12,7 @@ import HeadingPage from '../../../components/atoms/HeadingPage'
 import LinkPrevPage from '../../../components/atoms/LinkPrevPage'
 import LinkNextPage from '../../../components/atoms/LinkNextPage'
 import { PostsData } from '../../../types'
+import PageHead from "../../../components/templates/PageHead";
 
 type Props = {
   postsData: PostsData[]
@@ -25,18 +26,26 @@ const BlogPage: NextPage<Props> = ({
   nextPageLink,
 }) => {
   return (
-    <section>
-      <HeadingPage>Blog</HeadingPage>
-      <PageContents>
-        <BlogPostList postsData={postsData} />
-      </PageContents>
-      <BlogPagination>
-        <LinkPrevPage href={prevPageLink.href} as={prevPageLink.as} />
-        {nextPageLink && (
-          <LinkNextPage href={nextPageLink.href} as={nextPageLink.as} />
-        )}
-      </BlogPagination>
-    </section>
+    <>
+      <PageHead
+        title="Blog"
+        description="Takahashi YutaのWEB開発ブログ兼ポートフォリオサイトのブログ一覧ページ"
+        type="website"
+        image=""
+      />
+      <section>
+        <HeadingPage>Blog</HeadingPage>
+        <PageContents>
+          <BlogPostList postsData={postsData} />
+        </PageContents>
+        <BlogPagination>
+          <LinkPrevPage href={prevPageLink.href} as={prevPageLink.as} />
+          {nextPageLink && (
+            <LinkNextPage href={nextPageLink.href} as={nextPageLink.as} />
+          )}
+        </BlogPagination>
+      </section>
+    </>
   )
 }
 

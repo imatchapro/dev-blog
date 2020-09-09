@@ -11,6 +11,7 @@ import HeadingPage from '../components/atoms/HeadingPage'
 import ButtonFormSubmit from '../components/atoms/ButtonFormSubmit'
 import TextInformation from '../components/atoms/TextInformation'
 import TextAlert from '../components/atoms/TextAlert'
+import PageHead from "../components/templates/PageHead";
 
 type FormValues = {
   name: string
@@ -72,91 +73,105 @@ const Contact: NextPage = () => {
   }
 
   return (
-    <section>
-      <HeadingPage>Contact</HeadingPage>
-      <PageContents>
-        <form id="contact-form" onSubmit={handleSubmit(onSubmit)} method="post">
-          <FormItem>
-            <TextFormLabel htmlFor="name">Name</TextFormLabel>
-            <div className="sm:w-4/5">
-              <input
-                id="name"
-                className={
-                  errors.name ? 'form-input-area-error' : 'form-input-area'
-                }
-                type="text"
-                name="name"
-                placeholder="あなたのお名前"
-                ref={register({ required: true })}
-              />
-              {errors.name && (
-                <TextFormError>お名前が正しく入力されていません</TextFormError>
-              )}
+    <>
+      <PageHead
+        title="Contact"
+        description="「Takahashi Yuta」のWEB開発ブログ兼ポートフォリオサイトのお問い合わせページ"
+        type="website"
+        image=""
+      />
+      <section>
+        <HeadingPage>Contact</HeadingPage>
+        <PageContents>
+          <form
+            id="contact-form"
+            onSubmit={handleSubmit(onSubmit)}
+            method="post"
+          >
+            <FormItem>
+              <TextFormLabel htmlFor="name">Name</TextFormLabel>
+              <div className="sm:w-4/5">
+                <input
+                  id="name"
+                  className={
+                    errors.name ? 'form-input-area-error' : 'form-input-area'
+                  }
+                  type="text"
+                  name="name"
+                  placeholder="あなたのお名前"
+                  ref={register({ required: true })}
+                />
+                {errors.name && (
+                  <TextFormError>
+                    お名前が正しく入力されていません
+                  </TextFormError>
+                )}
+              </div>
+            </FormItem>
+            <FormItem>
+              <TextFormLabel htmlFor="email">Email</TextFormLabel>
+              <div className="sm:w-4/5">
+                <input
+                  id="email"
+                  className={
+                    errors.email ? 'form-input-area-error' : 'form-input-area'
+                  }
+                  type="email"
+                  name="email"
+                  placeholder="example@email.com"
+                  ref={register({
+                    required: true,
+                    pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                  })}
+                />
+                {errors.email && (
+                  <TextFormError>
+                    メールアドレスが正しく入力されていません
+                  </TextFormError>
+                )}
+              </div>
+            </FormItem>
+            <FormItem>
+              <TextFormLabel htmlFor="message">Message</TextFormLabel>
+              <div className="sm:w-4/5">
+                <textarea
+                  id="message"
+                  className={
+                    errors.message ? 'form-input-area-error' : 'form-input-area'
+                  }
+                  name="message"
+                  placeholder="お問い合わせのメッセージ"
+                  rows={6}
+                  ref={register({ required: true })}
+                />
+                {errors.message && (
+                  <TextFormError>
+                    メッセージが正しく入力されていません
+                  </TextFormError>
+                )}
+              </div>
+            </FormItem>
+            <input type="text" name="honeypot" className="hidden" />
+            <div className="mt-12 w-full h-40 py-6 px-4 border overflow-auto rounded sm:h-48 sm:py-8 sm:px-6">
+              <ThePrivacyPolicy />
             </div>
-          </FormItem>
-          <FormItem>
-            <TextFormLabel htmlFor="email">Email</TextFormLabel>
-            <div className="sm:w-4/5">
-              <input
-                id="email"
-                className={
-                  errors.email ? 'form-input-area-error' : 'form-input-area'
-                }
-                type="email"
-                name="email"
-                placeholder="example@email.com"
-                ref={register({
-                  required: true,
-                  pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                })}
-              />
-              {errors.email && (
-                <TextFormError>
-                  メールアドレスが正しく入力されていません
-                </TextFormError>
-              )}
-            </div>
-          </FormItem>
-          <FormItem>
-            <TextFormLabel htmlFor="message">Message</TextFormLabel>
-            <div className="sm:w-4/5">
-              <textarea
-                id="message"
-                className={
-                  errors.message ? 'form-input-area-error' : 'form-input-area'
-                }
-                name="message"
-                placeholder="お問い合わせのメッセージ"
-                rows={6}
-                ref={register({ required: true })}
-              />
-              {errors.message && (
-                <TextFormError>
-                  メッセージが正しく入力されていません
-                </TextFormError>
-              )}
-            </div>
-          </FormItem>
-          <input type="text" name="honeypot" className="hidden" />
-          <div className="mt-12 w-full h-40 py-6 px-4 border overflow-auto rounded sm:h-48 sm:py-8 sm:px-6">
-            <ThePrivacyPolicy />
-          </div>
-          <div className="mt-3">
-            <TextInformation>
-              プライバシーポリシーに同意の上、送信してください。
-            </TextInformation>
-          </div>
-          {response.message && (
             <div className="mt-3">
-              <TextAlert>{response.message}</TextAlert>
+              <TextInformation>
+                プライバシーポリシーに同意の上、送信してください。
+              </TextInformation>
             </div>
-          )}
-          <div className="text-center mt-12">
-            <ButtonFormSubmit />
-          </div>
-        </form>
-      </PageContents>
-    </section>
+            {response.message && (
+              <div className="mt-3">
+                <TextAlert>{response.message}</TextAlert>
+              </div>
+            )}
+            <div className="text-center mt-12">
+              <ButtonFormSubmit />
+            </div>
+          </form>
+        </PageContents>
+      </section>
+    </>
   )
 }
 
