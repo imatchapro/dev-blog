@@ -1,8 +1,8 @@
 import React from 'react'
 import { NextPage } from 'next'
+import PageHead from '../components/templates/PageHead'
 import PageContents from '../components/molecules/PageContents'
 import HeadingPage from '../components/atoms/HeadingPage'
-import PageHead from "../components/templates/PageHead";
 
 const Works: NextPage = () => {
   return (

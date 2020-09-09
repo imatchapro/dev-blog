@@ -3,9 +3,9 @@ import Link from 'next/link'
 import { NextPage } from 'next'
 import { useRouter } from 'next/router'
 import { FiArrowUp } from 'react-icons/fi'
+import PageHead from '../components/templates/PageHead'
 import PageContents from '../components/molecules/PageContents'
 import HeadingPage from '../components/atoms/HeadingPage'
-import PageHead from '../components/templates/PageHead'
 
 const Thanks: NextPage = () => {
   const router = useRouter()

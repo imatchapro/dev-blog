@@ -2,12 +2,12 @@ import React, { useEffect } from 'react'
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
 import Prism from 'prismjs'
 import { getAllPostsIds, getPostData } from '../../lib/posts'
+import PageHead from '../../components/templates/PageHead'
 import BlogPagination from '../../components/molecules/BlogPagination'
 import HeadingPostPage from '../../components/atoms/HeadingPostPage'
 import LinkBackPage from '../../components/atoms/LinkBackPage'
 import TextFormatDate from '../../components/atoms/TextFormatDate'
 import { PostContentData } from '../../types'
-import PageHead from '../../components/templates/PageHead'
 
 type Props = {
   postData: PostContentData

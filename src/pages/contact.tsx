@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { NextPage } from 'next'
 import { useRouter } from 'next/router'
 import { useForm, SubmitHandler } from 'react-hook-form'
+import PageHead from '../components/templates/PageHead'
 import ThePrivacyPolicy from '../components/organisms/ThePrivacyPolicy'
 import PageContents from '../components/molecules/PageContents'
 import FormItem from '../components/molecules/FormItem'
@@ -11,7 +12,6 @@ import HeadingPage from '../components/atoms/HeadingPage'
 import ButtonFormSubmit from '../components/atoms/ButtonFormSubmit'
 import TextInformation from '../components/atoms/TextInformation'
 import TextAlert from '../components/atoms/TextAlert'
-import PageHead from "../components/templates/PageHead";
 
 type FormValues = {
   name: string
