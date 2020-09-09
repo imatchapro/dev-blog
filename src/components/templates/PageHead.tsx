@@ -9,6 +9,7 @@ type Props = {
 }
 
 const site_name = 'Dev Blog'
+const twitter_id = '@imatchapro'
 
 const PageHead: React.FC<Props> = ({
   title,
@@ -33,8 +34,8 @@ const PageHead: React.FC<Props> = ({
       <meta property="og:image" content={image} />
       <meta property="og:site_name" content={site_name} />
       <meta name="twitter:card" content="summary" />
-      <meta name="twitter:site" content="@imatchapro" />
-      <meta name="twitter:creator" content="@imatchapro" />
+      <meta name="twitter:site" content={twitter_id} />
+      <meta name="twitter:creator" content={twitter_id} />
       <meta name="twitter:url" content={url} />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />

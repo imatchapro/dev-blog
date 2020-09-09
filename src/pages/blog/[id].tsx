@@ -7,33 +7,44 @@ import HeadingPostPage from '../../components/atoms/HeadingPostPage'
 import LinkBackPage from '../../components/atoms/LinkBackPage'
 import TextFormatDate from '../../components/atoms/TextFormatDate'
 import { PostContentData } from '../../types'
+import PageHead from '../../components/templates/PageHead'
 
 type Props = {
   postData: PostContentData
 }
 
-const BlogPost: NextPage<Props> = ({ postData }) => {
+const BlogPost: NextPage<Props> = ({
+  postData: { contentHtml, date, description, title },
+}) => {
   useEffect(() => {
     Prism.highlightAll()
   }, [])
 
   return (
-    <article>
-      <section>
-        <p className="mb-3">
-          <TextFormatDate dateString={postData.date} />
-        </p>
-        <HeadingPostPage>{postData.title}</HeadingPostPage>
-        <p className=" text-base mt-6 sm:text-lg">{postData.description}</p>
-      </section>
-      <section
-        className="markdown"
-        dangerouslySetInnerHTML={{ __html: postData.contentHtml }}
+    <>
+      <PageHead
+        title={title}
+        description={description}
+        type="article"
+        image=""
       />
-      <BlogPagination>
-        <LinkBackPage />
-      </BlogPagination>
-    </article>
+      <article>
+        <section>
+          <p className="mb-3">
+            <TextFormatDate dateString={date} />
+          </p>
+          <HeadingPostPage>{title}</HeadingPostPage>
+          <p className=" text-base mt-6 sm:text-lg">{description}</p>
+        </section>
+        <section
+          className="markdown"
+          dangerouslySetInnerHTML={{ __html: contentHtml }}
+        />
+        <BlogPagination>
+          <LinkBackPage />
+        </BlogPagination>
+      </article>
+    </>
   )
 }
 
