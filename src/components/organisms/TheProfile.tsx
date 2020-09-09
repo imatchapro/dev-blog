@@ -5,14 +5,21 @@ import ProfileListItem from '../atoms/ProfileListItem'
 const TheProfile: React.FC = () => {
   return (
     <section className="mt-12 pt-12 border-t flex sm:mt-12 sm:pt-12">
-      <figure>
-        <div className="w-16 h-16 rounded bg-gray-300 sm:w-32 sm:h-32" />
+      <figure className="flex-shrink-0">
+        <img
+          className="w-20 h-20 rounded bg-gray-300 sm:w-32 sm:h-32"
+          src="/profile.jpg"
+          alt="Yuta Takahashi"
+          width="256"
+          height="256"
+          loading="lazy"
+        />
       </figure>
       <div className="ml-6 sm:ml-12">
         <h1 className="text-2xl text-gray-800 font-semibold leading-none sm:text-3xl">
           Yuta Takahashi
         </h1>
-        <nav className="mt-6 sm:mt-6">
+        <nav className="mt-4 sm:mt-6">
           <ul>
             <ProfileListItem
               icon={FiMessageCircle}
@@ -25,13 +32,13 @@ const TheProfile: React.FC = () => {
             />
             <ProfileListItem
               icon={FiGithub}
-              text="@imatchapro"
-              href="https://github.com/imatchapro"
+              text="@takayuu"
+              href="https://github.com/takayuu"
             />
             <ProfileListItem
               icon={FiTwitter}
-              text="@imatchapro"
-              href="https://twitter.com/imatchapro"
+              text="@_takayu"
+              href="https://twitter.com/_takayu"
             />
           </ul>
         </nav>

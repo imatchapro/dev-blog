@@ -20,7 +20,7 @@
 }
 
 .markdown h3 {
-  @apply mt-10 mb-6 text-lg;
+  @apply mt-12 mb-6 text-lg;
 }
 
 .markdown h4 {
@@ -28,11 +28,11 @@
 }
 
 .markdown h5 {
-  @apply mt-8 mb-4 text-sm;
+  @apply mt-10 mb-4 text-sm;
 }
 
 .markdown h6 {
-  @apply mt-8 mb-4 text-xs;
+  @apply mt-10 mb-4 text-xs;
 }
 
 @screen sm {
@@ -66,11 +66,15 @@
 }
 
 .markdown blockquote {
-  @apply my-6 border-l-4 pl-4 text-gray-500 font-normal;
+  @apply my-6 border-l-4 border-gray-600 pl-4 py-1 text-gray-600 font-normal;
 }
 
 .markdown blockquote p {
-  @apply my-6;
+  @apply mt-6;
+}
+
+.markdown blockquote p:first-child {
+  @apply mt-0;
 }
 
 .markdown a[href] {
@@ -82,7 +86,11 @@
 }
 
 .markdown pre {
-  @apply my-6 bg-gray-200 rounded p-4 overflow-auto;
+  @apply my-6 bg-gray-200 rounded py-4 px-4 overflow-auto;
+}
+
+.markdown pre[class*='language-'] {
+  @apply px-4;
 }
 
 .markdown pre code {
@@ -126,7 +134,19 @@
     @apply pl-5;
   }
 
+  .markdown blockquote {
+    @apply pl-6;
+  }
+
   .markdown code {
     @apply text-sm;
+  }
+
+  .markdown pre {
+    @apply px-6;
+  }
+
+  .markdown pre[class*='language-'] {
+    @apply px-6;
   }
 }

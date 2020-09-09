@@ -25,11 +25,11 @@ const BlogPost: NextPage<Props> = ({
       <PageHead title={title} description={tldr} type="article" image="" />
       <article>
         <section>
-          <p className="mb-3">
+          <p className="mb-6 leading-none">
             <TextFormatDate dateString={published} />
           </p>
           <HeadingPostPage>{title}</HeadingPostPage>
-          <p className="text-base mt-6 sm:text-lg">{tldr}</p>
+          <p className="text-sm mt-6 sm:text-lg">{tldr}</p>
         </section>
         <section
           className="markdown"
