@@ -24,7 +24,7 @@ const Thanks: NextPage = () => {
           お急ぎの場合は
           <a
             className="text-blue-600 font-medium hover:text-blue-400 transition-navigation"
-            href="https://twitter.com/imatchapro"
+            href="https://twitter.com/takayu_dev"
             target="_blank"
             rel="noreferrer"
           >

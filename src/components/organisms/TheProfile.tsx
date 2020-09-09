@@ -38,7 +38,7 @@ const TheProfile: React.FC = () => {
             <ProfileListItem
               icon={FiTwitter}
               text="@_takayu"
-              href="https://twitter.com/_takayu"
+              href="https://twitter.com/takayu_dev"
             />
           </ul>
         </nav>
