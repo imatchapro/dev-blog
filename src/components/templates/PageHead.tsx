@@ -42,7 +42,7 @@ const PageHead: React.FC<Props> = ({
       <meta name="twitter:image" content={image} />
       <link rel="icon" href="/favicon.ico" />
       <link rel="canonical" href={url} />
-      <link rel="apple-touch-icon" href="" />
+      <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
     </Head>
   );
 };

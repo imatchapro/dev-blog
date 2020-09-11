@@ -1,8 +1,9 @@
-import fs from 'fs';
-import prettier from 'prettier';
-import globby from 'globby';
+/* eslint-disable @typescript-eslint/no-var-requires */
+const fs = require('fs');
+const prettier = require('prettier');
+const globby = require('globby');
 
-const SITE_NAME = "takayu.dev"
+const SITE_NAME = 'takayu.dev';
 const COUNT_PER_PAGE = 10;
 
 (async () => {
