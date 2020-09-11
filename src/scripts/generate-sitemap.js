@@ -14,15 +14,18 @@ const COUNT_PER_PAGE = 10;
     '!src/pages/**/[*.tsx',
   ]);
   const posts = await globby(['src/posts/*.md']);
-  const postsPagesLength = Math.ceil(posts.length / COUNT_PER_PAGE);
-  const postsPages = () =>
-    postsPagesLength > 0
+  const generatePostsPages = () => {
+    const postsPagesLength = Math.ceil(posts.length / COUNT_PER_PAGE);
+
+    return postsPagesLength > 0
       ? new Array(postsPagesLength)
           .fill(undefined)
           .map((_, i) => `/blog/page/${i + 1}`)
           .filter((_, i) => i !== 0)
       : [];
-  const routes = [...pages, ...posts, ...postsPages()];
+  };
+  const postsPages = generatePostsPages();
+  const routes = [...pages, ...posts, ...postsPages];
   const sitemap = `
   <?xml version="1.0" encoding="UTF-8"?>
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
