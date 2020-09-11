@@ -8,7 +8,7 @@ const TheProfile: React.FC = () => {
       <figure className="flex-shrink-0">
         <img
           className="w-20 h-20 rounded bg-gray-300 sm:w-32 sm:h-32"
-          src="/profile.jpg"
+          src="/profile.webp"
           alt="Yuta Takahashi"
           width="256"
           height="256"
