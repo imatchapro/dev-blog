@@ -33,14 +33,12 @@ const COUNT_PER_PAGE = 10;
             .replace('pages', '')
             .replace('posts', '/blog')
             .replace('.md', '')
-            .replace('.tsx', '');
-          const route = path.includes('/index')
-            ? path.replace('/index', '')
-            : path;
+            .replace('.tsx', '')
+            .replace('/index', '');
 
           return `
             <url>
-              <loc>https://${SITE_NAME}${route}</loc>
+              <loc>https://${SITE_NAME}${path}</loc>
             </url>
           `;
         })
