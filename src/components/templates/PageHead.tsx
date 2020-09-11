@@ -8,8 +8,8 @@ type Props = {
   image: string;
 };
 
-const site_name = "Yuta Takahashi's Website";
-const twitter_id = '@takayu_dev';
+const SITE_NAME = "Yuta Takahashi's Website";
+const TWITTER_ID = '@takayu_dev';
 
 const PageHead: React.FC<Props> = ({
   title,
@@ -25,17 +25,17 @@ const PageHead: React.FC<Props> = ({
 
   return (
     <Head>
-      <title>{title + ' | ' + site_name}</title>
+      <title>{title + ' | ' + SITE_NAME}</title>
       <meta name="description" content={description} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:type" content={type} />
       <meta property="og:url" content={url} />
       <meta property="og:image" content={image} />
-      <meta property="og:site_name" content={site_name} />
+      <meta property="og:site_name" content={SITE_NAME} />
       <meta name="twitter:card" content="summary" />
-      <meta name="twitter:site" content={twitter_id} />
-      <meta name="twitter:creator" content={twitter_id} />
+      <meta name="twitter:site" content={TWITTER_ID} />
+      <meta name="twitter:creator" content={TWITTER_ID} />
       <meta name="twitter:url" content={url} />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
