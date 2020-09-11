@@ -76,7 +76,7 @@ const Contact: NextPage = () => {
     <>
       <PageHead
         title="Contact"
-        description="福岡県のフロントエンドエンジニアのWEB開発ブログ兼ポートフォリオサイトのお問い合わせページ"
+        description="Yuta Takahashi宛にメールが届くお問い合わせページです。"
         type="website"
         image=""
       />

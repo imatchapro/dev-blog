@@ -3,12 +3,12 @@ import React from 'react'
 const TheMainView: React.FC = () => {
   return (
     <section className="pt-6 pb-12 sm:pt-8 sm:pb-16">
-      <h1 className="text-4xl text-gray-800 font-bold sm:text-5xl">
-        I&#39;m unemployed.
+      <h1 className="text-3xl text-gray-800 font-bold sm:text-5xl">
+        Hi, there!
         <br />
-        Give me a job.
+        I&apos;m Yuta Takahashi.
         <br />
-        Seriously.
+        Welcome to my website.
       </h1>
     </section>
   )

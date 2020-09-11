@@ -8,8 +8,7 @@ type Props = {
   image: string
 }
 
-const site_name =
-  '福岡県のフロントエンドエンジニアのWEB開発ブログ兼ポートフォリオサイト'
+const site_name = "Yuta Takahashi's Website"
 const twitter_id = '@takayu_dev'
 
 const PageHead: React.FC<Props> = ({
@@ -26,7 +25,7 @@ const PageHead: React.FC<Props> = ({
 
   return (
     <Head>
-      <title>{site_name + ' | ' + title}</title>
+      <title>{title + ' | ' + site_name}</title>
       <meta name="description" content={description} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />

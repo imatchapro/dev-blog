@@ -23,7 +23,7 @@ const TheProfile: React.FC = () => {
           <ul>
             <ProfileListItem
               icon={FiMessageCircle}
-              text="I'm unemployed. Give me a job. Seriously."
+              text="ReactとTypeScriptとアイラモルトが好き"
             />
             <ProfileListItem
               icon={FiMapPin}

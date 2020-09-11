@@ -29,7 +29,7 @@ const BlogPage: NextPage<Props> = ({
     <>
       <PageHead
         title="Blog"
-        description="Takahashi YutaのWEB開発ブログ兼ポートフォリオサイトのブログ一覧ページ"
+        description="開発ブログの一覧ページです。フロントエンドの最新のトレンドや、TIPSの紹介などを中心に記事を書いていきます。"
         type="website"
         image=""
       />

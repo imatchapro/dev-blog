@@ -9,7 +9,7 @@ const Home: NextPage = () => (
   <>
     <PageHead
       title="Home"
-      description="福岡県のフロントエンドエンジニアのWEB開発ブログ兼ポートフォリオサイトのトップページ"
+      description="Yuta Takahashiの個人ウェブサイトです。このウェブサイトでは。開発ブログ（主にフロントエンド側）を書いたり、個人で制作したアプリケーションや関わったプロダクトの一覧をまとめたりしています。"
       type="website"
       image=""
     />
