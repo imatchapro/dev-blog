@@ -2,19 +2,21 @@ import fs from 'fs';
 import prettier from 'prettier';
 import globby from 'globby';
 
+const SITE_NAME = "takayu.dev"
+const COUNT_PER_PAGE = 10;
+
 (async () => {
   const prettierConfig = await prettier.resolveConfig('../.prettierrc.js');
-  const COUNT_PER_PAGE = 10;
   const pages = await globby([
     'src/pages/**/*.tsx',
     '!src/pages/_*.tsx',
     '!src/pages/**/[*.tsx',
   ]);
   const posts = await globby(['src/posts/*.md']);
-  const postPageLength = Math.ceil(posts.length / COUNT_PER_PAGE);
+  const postsPagesLength = Math.ceil(posts.length / COUNT_PER_PAGE);
   const postsPages = () =>
-    postPageLength > 0
-      ? new Array(postPageLength)
+    postsPagesLength > 0
+      ? new Array(postsPagesLength)
           .fill(undefined)
           .map((_, i) => `/blog/page/${i + 1}`)
           .filter((_, i) => i !== 0)
@@ -37,7 +39,7 @@ import globby from 'globby';
 
           return `
             <url>
-              <loc>https://takayu.dev${route}</loc>
+              <loc>https://${SITE_NAME}${route}</loc>
             </url>
           `;
         })
