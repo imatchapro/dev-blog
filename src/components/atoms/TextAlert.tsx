@@ -1,5 +1,5 @@
-import React from 'react'
-import { FiBell } from 'react-icons/fi'
+import React from 'react';
+import { FiBell } from 'react-icons/fi';
 
 const TextAlert: React.FC = ({ children }) => {
   return (
@@ -7,7 +7,7 @@ const TextAlert: React.FC = ({ children }) => {
       <FiBell className="text-sm flex-shrink-0" />
       <span className="ml-2 text-xs sm:ml-1">{children}</span>
     </p>
-  )
-}
+  );
+};
 
-export default TextAlert
+export default TextAlert;

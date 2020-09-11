@@ -1,15 +1,15 @@
-import React, { useEffect, useState } from 'react'
-import Head from 'next/head'
+import React, { useEffect, useState } from 'react';
+import Head from 'next/head';
 
 type Props = {
-  title: string
-  description: string
-  type: string
-  image: string
-}
+  title: string;
+  description: string;
+  type: string;
+  image: string;
+};
 
-const site_name = "Yuta Takahashi's Website"
-const twitter_id = '@takayu_dev'
+const site_name = "Yuta Takahashi's Website";
+const twitter_id = '@takayu_dev';
 
 const PageHead: React.FC<Props> = ({
   title,
@@ -17,11 +17,11 @@ const PageHead: React.FC<Props> = ({
   type,
   image,
 }): JSX.Element => {
-  const [url, setUrl] = useState<string>('')
+  const [url, setUrl] = useState<string>('');
 
   useEffect(() => {
-    setUrl(location.href)
-  })
+    setUrl(location.href);
+  });
 
   return (
     <Head>
@@ -44,7 +44,7 @@ const PageHead: React.FC<Props> = ({
       <link rel="canonical" href={url} />
       <link rel="apple-touch-icon" href="" />
     </Head>
-  )
-}
+  );
+};
 
-export default PageHead
+export default PageHead;

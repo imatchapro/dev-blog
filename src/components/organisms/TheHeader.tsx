@@ -1,6 +1,6 @@
-import React from 'react'
-import HeaderNavigation from '../molecules/HeaderNavigation'
-import HeaderLogo from '../atoms/HeaderLogo'
+import React from 'react';
+import HeaderNavigation from '../molecules/HeaderNavigation';
+import HeaderLogo from '../atoms/HeaderLogo';
 
 const TheHeader: React.FC = () => {
   return (
@@ -8,7 +8,7 @@ const TheHeader: React.FC = () => {
       <HeaderLogo />
       <HeaderNavigation />
     </header>
-  )
-}
+  );
+};
 
-export default TheHeader
+export default TheHeader;

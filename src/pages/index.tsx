@@ -1,9 +1,9 @@
-import React from 'react'
-import { NextPage } from 'next'
-import PageHead from '../components/templates/PageHead'
-import TheMainView from '../components/organisms/TheMainView'
-import TheContentsNavigation from '../components/organisms/TheContentsNavigation'
-import TheProfile from '../components/organisms/TheProfile'
+import React from 'react';
+import { NextPage } from 'next';
+import PageHead from '../components/templates/PageHead';
+import TheMainView from '../components/organisms/TheMainView';
+import TheContentsNavigation from '../components/organisms/TheContentsNavigation';
+import TheProfile from '../components/organisms/TheProfile';
 
 const Home: NextPage = () => (
   <>
@@ -17,6 +17,6 @@ const Home: NextPage = () => (
     <TheContentsNavigation />
     <TheProfile />
   </>
-)
+);
 
-export default Home
+export default Home;

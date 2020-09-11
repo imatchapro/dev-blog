@@ -1,11 +1,11 @@
-import React from 'react'
-import Link from 'next/link'
-import { FiChevronLeft } from 'react-icons/fi'
+import React from 'react';
+import Link from 'next/link';
+import { FiChevronLeft } from 'react-icons/fi';
 
 type Props = {
-  href: string
-  as: string
-}
+  href: string;
+  as: string;
+};
 
 const LinkPrevPage: React.FC<Props> = ({ href, as }) => {
   return (
@@ -15,7 +15,7 @@ const LinkPrevPage: React.FC<Props> = ({ href, as }) => {
         <span className="ml-2">Previous</span>
       </a>
     </Link>
-  )
-}
+  );
+};
 
-export default LinkPrevPage
+export default LinkPrevPage;

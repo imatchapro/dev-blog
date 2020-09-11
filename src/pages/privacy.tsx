@@ -1,12 +1,12 @@
-import React from 'react'
-import { NextPage } from 'next'
-import PageHead from '../components/templates/PageHead'
-import PageContents from '../components/molecules/PageContents'
-import SectionPrivacy from '../components/molecules/SectionPrivacy'
-import HeadingPage from '../components/atoms/HeadingPage'
-import HeadingPrivacy from '../components/atoms/HeadingPrivacy'
-import TextPrivacy from '../components/atoms/TextPrivacy'
-import ListDecimal from '../components/atoms/ListDecimal'
+import React from 'react';
+import { NextPage } from 'next';
+import PageHead from '../components/templates/PageHead';
+import PageContents from '../components/molecules/PageContents';
+import SectionPrivacy from '../components/molecules/SectionPrivacy';
+import HeadingPage from '../components/atoms/HeadingPage';
+import HeadingPrivacy from '../components/atoms/HeadingPrivacy';
+import TextPrivacy from '../components/atoms/TextPrivacy';
+import ListDecimal from '../components/atoms/ListDecimal';
 
 const Privacy: NextPage = () => {
   return (
@@ -199,7 +199,7 @@ const Privacy: NextPage = () => {
         </PageContents>
       </section>
     </>
-  )
-}
+  );
+};
 
-export default Privacy
+export default Privacy;

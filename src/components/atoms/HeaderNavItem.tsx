@@ -1,9 +1,9 @@
-import React from 'react'
-import Link from 'next/link'
+import React from 'react';
+import Link from 'next/link';
 
 type Props = {
-  path: string
-}
+  path: string;
+};
 
 const HeaderNavItem: React.FC<Props> = ({ path, children }) => {
   return (
@@ -14,7 +14,7 @@ const HeaderNavItem: React.FC<Props> = ({ path, children }) => {
         </a>
       </Link>
     </li>
-  )
-}
+  );
+};
 
-export default HeaderNavItem
+export default HeaderNavItem;

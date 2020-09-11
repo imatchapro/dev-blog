@@ -1,12 +1,12 @@
-import React from 'react'
-import Link from 'next/link'
-import { FiLink } from 'react-icons/fi'
-import TextFormatDate from '../atoms/TextFormatDate'
-import { PostsData } from '../../types'
+import React from 'react';
+import Link from 'next/link';
+import { FiLink } from 'react-icons/fi';
+import TextFormatDate from '../atoms/TextFormatDate';
+import { PostsData } from '../../types';
 
 type Props = {
-  postsData: PostsData[]
-}
+  postsData: PostsData[];
+};
 
 const BlogPostList: React.FC<Props> = ({ postsData }) => {
   return (
@@ -33,7 +33,7 @@ const BlogPostList: React.FC<Props> = ({ postsData }) => {
         </li>
       ))}
     </ul>
-  )
-}
+  );
+};
 
-export default BlogPostList
+export default BlogPostList;

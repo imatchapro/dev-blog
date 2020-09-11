@@ -1,14 +1,14 @@
-import React from 'react'
-import { IconType } from 'react-icons/lib'
+import React from 'react';
+import { IconType } from 'react-icons/lib';
 
 type Props = {
-  icon: IconType
-  href?: string
-  text: string
-}
+  icon: IconType;
+  href?: string;
+  text: string;
+};
 
 const ProfileListItem: React.FC<Props> = ({ icon, href, text }) => {
-  const Icon = icon
+  const Icon = icon;
 
   return (
     <li className="mt-1 first:mt-0">
@@ -29,7 +29,7 @@ const ProfileListItem: React.FC<Props> = ({ icon, href, text }) => {
         </div>
       )}
     </li>
-  )
-}
+  );
+};
 
-export default ProfileListItem
+export default ProfileListItem;

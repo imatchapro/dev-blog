@@ -1,8 +1,8 @@
-import React from 'react'
-import { NextPage } from 'next'
-import PageHead from '../components/templates/PageHead'
-import PageContents from '../components/molecules/PageContents'
-import HeadingPage from '../components/atoms/HeadingPage'
+import React from 'react';
+import { NextPage } from 'next';
+import PageHead from '../components/templates/PageHead';
+import PageContents from '../components/molecules/PageContents';
+import HeadingPage from '../components/atoms/HeadingPage';
 
 const Works: NextPage = () => {
   return (
@@ -20,7 +20,7 @@ const Works: NextPage = () => {
         </PageContents>
       </section>
     </>
-  )
-}
+  );
+};
 
-export default Works
+export default Works;

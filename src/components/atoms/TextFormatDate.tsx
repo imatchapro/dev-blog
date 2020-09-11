@@ -1,14 +1,14 @@
-import React from 'react'
-import { parseISO, format } from 'date-fns'
+import React from 'react';
+import { parseISO, format } from 'date-fns';
 
 type Props = {
-  dateString: string
-}
+  dateString: string;
+};
 
 const TextFormatDate: React.FC<Props> = ({ dateString }) => {
-  const date = parseISO(dateString)
+  const date = parseISO(dateString);
 
-  return <time dateTime={dateString}>{format(date, 'yyyy.MM.dd')}</time>
-}
+  return <time dateTime={dateString}>{format(date, 'yyyy.MM.dd')}</time>;
+};
 
-export default TextFormatDate
+export default TextFormatDate;

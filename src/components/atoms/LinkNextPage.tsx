@@ -1,11 +1,11 @@
-import React from 'react'
-import Link from 'next/link'
-import { FiChevronRight } from 'react-icons/fi'
+import React from 'react';
+import Link from 'next/link';
+import { FiChevronRight } from 'react-icons/fi';
 
 type Props = {
-  href: string
-  as: string
-}
+  href: string;
+  as: string;
+};
 
 const LinkNextPage: React.FC<Props> = ({ href, as }) => {
   return (
@@ -15,7 +15,7 @@ const LinkNextPage: React.FC<Props> = ({ href, as }) => {
         <FiChevronRight />
       </a>
     </Link>
-  )
-}
+  );
+};
 
-export default LinkNextPage
+export default LinkNextPage;

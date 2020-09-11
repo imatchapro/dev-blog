@@ -15,4 +15,4 @@ module.exports = {
     margin: ['first', 'responsive'],
   },
   plugins: [],
-}
+};

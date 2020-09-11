@@ -1,8 +1,8 @@
-import React from 'react'
-import { FiCode, FiMail, FiPenTool } from 'react-icons/fi'
-import ContentNavItemHeading from '../atoms/ContentNavItemHeading'
-import ContentNavItemText from '../atoms/ContentNavItemText'
-import ContentNavItemLink from '../atoms/ContentNavItemLink'
+import React from 'react';
+import { FiCode, FiMail, FiPenTool } from 'react-icons/fi';
+import ContentNavItemHeading from '../atoms/ContentNavItemHeading';
+import ContentNavItemText from '../atoms/ContentNavItemText';
+import ContentNavItemLink from '../atoms/ContentNavItemLink';
 
 const TheContentsNavigation: React.FC = () => {
   return (
@@ -58,7 +58,7 @@ const TheContentsNavigation: React.FC = () => {
         </li>
       </ul>
     </nav>
-  )
-}
+  );
+};
 
-export default TheContentsNavigation
+export default TheContentsNavigation;

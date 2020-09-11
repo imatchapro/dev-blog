@@ -1,76 +1,76 @@
-import React, { useState } from 'react'
-import { NextPage } from 'next'
-import { useRouter } from 'next/router'
-import { useForm, SubmitHandler } from 'react-hook-form'
-import PageHead from '../components/templates/PageHead'
-import ThePrivacyPolicy from '../components/organisms/ThePrivacyPolicy'
-import PageContents from '../components/molecules/PageContents'
-import FormItem from '../components/molecules/FormItem'
-import TextFormLabel from '../components/atoms/TextFormLabel'
-import TextFormError from '../components/atoms/TextFormError'
-import HeadingPage from '../components/atoms/HeadingPage'
-import ButtonFormSubmit from '../components/atoms/ButtonFormSubmit'
-import TextInformation from '../components/atoms/TextInformation'
-import TextAlert from '../components/atoms/TextAlert'
+import React, { useState } from 'react';
+import { NextPage } from 'next';
+import { useRouter } from 'next/router';
+import { useForm, SubmitHandler } from 'react-hook-form';
+import PageHead from '../components/templates/PageHead';
+import ThePrivacyPolicy from '../components/organisms/ThePrivacyPolicy';
+import PageContents from '../components/molecules/PageContents';
+import FormItem from '../components/molecules/FormItem';
+import TextFormLabel from '../components/atoms/TextFormLabel';
+import TextFormError from '../components/atoms/TextFormError';
+import HeadingPage from '../components/atoms/HeadingPage';
+import ButtonFormSubmit from '../components/atoms/ButtonFormSubmit';
+import TextInformation from '../components/atoms/TextInformation';
+import TextAlert from '../components/atoms/TextAlert';
 
 type FormValues = {
-  name: string
-  email: string
-  message: string
-}
+  name: string;
+  email: string;
+  message: string;
+};
 
 type ResponseMessage = {
-  type: string
-  message: string
-}
+  type: string;
+  message: string;
+};
 
 const Contact: NextPage = () => {
   const resInitMessage: ResponseMessage = {
     type: '',
     message: '',
-  }
+  };
   const resErrorMessage: ResponseMessage = {
     type: 'error',
     message: 'エラーが発生しました。もう一度やり直してください。',
-  }
-  const [response, setResponse] = useState<ResponseMessage>(resInitMessage)
-  const { register, handleSubmit, errors } = useForm<FormValues>()
-  const router = useRouter()
+  };
+  const [response, setResponse] = useState<ResponseMessage>(resInitMessage);
+  const { register, handleSubmit, errors } = useForm<FormValues>();
+  const router = useRouter();
 
   const resetForm = () => {
-    const form = document.getElementById('contact-form') as HTMLFormElement
-    form.reset()
-  }
+    const form = document.getElementById('contact-form') as HTMLFormElement;
+    form.reset();
+  };
 
   const onSubmit: SubmitHandler<FormValues> = async (values) => {
     const post = await Object.assign(values, {
       accessKey: process.env.static_form_access_key,
-    })
+    });
 
     try {
       const res = await fetch('https://api.staticforms.xyz/submit', {
         method: 'POST',
         body: JSON.stringify(post),
         headers: { 'Content-Type': 'application/json' },
-      })
+      });
 
-      const json = await res.json()
+      const json = await res.json();
 
       if (json.success) {
-        await resetForm()
+        await resetForm();
         await router.push({
           pathname: '/thanks',
           query: {
             name: values.name,
           },
-        })
+        });
       } else {
-        setResponse(resErrorMessage)
+        setResponse(resErrorMessage);
       }
     } catch {
-      setResponse(resErrorMessage)
+      setResponse(resErrorMessage);
     }
-  }
+  };
 
   return (
     <>
@@ -172,7 +172,7 @@ const Contact: NextPage = () => {
         </PageContents>
       </section>
     </>
-  )
-}
+  );
+};
 
-export default Contact
+export default Contact;

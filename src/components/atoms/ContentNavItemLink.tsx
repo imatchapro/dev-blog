@@ -1,11 +1,11 @@
-import React from 'react'
-import Link from 'next/link'
-import { FiLink } from 'react-icons/fi'
+import React from 'react';
+import Link from 'next/link';
+import { FiLink } from 'react-icons/fi';
 
 type Props = {
-  href: string
-  text: string
-}
+  href: string;
+  text: string;
+};
 
 const ContentNavItemLink: React.FC<Props> = ({ href, text }) => {
   return (
@@ -17,7 +17,7 @@ const ContentNavItemLink: React.FC<Props> = ({ href, text }) => {
         </a>
       </Link>
     </p>
-  )
-}
+  );
+};
 
-export default ContentNavItemLink
+export default ContentNavItemLink;

@@ -1,11 +1,11 @@
-import React from 'react'
-import Link from 'next/link'
+import React from 'react';
+import Link from 'next/link';
 
 type Props = {
-  href: string
-  text: string
-  icon: React.ReactNode
-}
+  href: string;
+  text: string;
+  icon: React.ReactNode;
+};
 
 const ContentNavItemHeading: React.FC<Props> = ({ href, text, icon }) => {
   return (
@@ -17,7 +17,7 @@ const ContentNavItemHeading: React.FC<Props> = ({ href, text, icon }) => {
         </a>
       </Link>
     </h2>
-  )
-}
+  );
+};
 
-export default ContentNavItemHeading
+export default ContentNavItemHeading;

@@ -1,6 +1,6 @@
-import React from 'react'
-import TheHeader from '../organisms/TheHeader'
-import TheFooter from '../organisms/TheFooter'
+import React from 'react';
+import TheHeader from '../organisms/TheHeader';
+import TheFooter from '../organisms/TheFooter';
 
 const Layout: React.FC = ({ children }) => (
   <div className="flex flex-col h-screen">
@@ -12,6 +12,6 @@ const Layout: React.FC = ({ children }) => (
     </main>
     <TheFooter />
   </div>
-)
+);
 
-export default Layout
+export default Layout;

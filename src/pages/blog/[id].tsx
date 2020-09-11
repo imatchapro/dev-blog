@@ -1,24 +1,24 @@
-import React, { useEffect } from 'react'
-import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
-import Prism from 'prismjs'
-import { getAllPostsIds, getPostData } from '../../lib/posts'
-import PageHead from '../../components/templates/PageHead'
-import BlogPagination from '../../components/molecules/BlogPagination'
-import HeadingPostPage from '../../components/atoms/HeadingPostPage'
-import LinkBackPage from '../../components/atoms/LinkBackPage'
-import TextFormatDate from '../../components/atoms/TextFormatDate'
-import { PostContentData } from '../../types'
+import React, { useEffect } from 'react';
+import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
+import Prism from 'prismjs';
+import { getAllPostsIds, getPostData } from '../../lib/posts';
+import PageHead from '../../components/templates/PageHead';
+import BlogPagination from '../../components/molecules/BlogPagination';
+import HeadingPostPage from '../../components/atoms/HeadingPostPage';
+import LinkBackPage from '../../components/atoms/LinkBackPage';
+import TextFormatDate from '../../components/atoms/TextFormatDate';
+import { PostContentData } from '../../types';
 
 type Props = {
-  postData: PostContentData
-}
+  postData: PostContentData;
+};
 
 const BlogPost: NextPage<Props> = ({
   postData: { contentHtml, published, tldr, title },
 }) => {
   useEffect(() => {
-    Prism.highlightAll()
-  }, [])
+    Prism.highlightAll();
+  }, []);
 
   return (
     <>
@@ -40,26 +40,26 @@ const BlogPost: NextPage<Props> = ({
         </BlogPagination>
       </article>
     </>
-  )
-}
+  );
+};
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = getAllPostsIds()
+  const paths = getAllPostsIds();
 
   return {
     paths,
     fallback: false,
-  }
-}
+  };
+};
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const postData = await getPostData(params.id)
+  const postData = await getPostData(params.id);
 
   return {
     props: {
       postData,
     },
-  }
-}
+  };
+};
 
-export default BlogPost
+export default BlogPost;

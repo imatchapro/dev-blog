@@ -1,12 +1,12 @@
-import React from 'react'
-import Link from 'next/link'
+import React from 'react';
+import Link from 'next/link';
 
 const HeaderLogo: React.FC = () => {
   return (
     <Link href="/">
       <a className="text-lg font-bold text-gray-800 sm:text-2xl">TKY.DEV</a>
     </Link>
-  )
-}
+  );
+};
 
-export default HeaderLogo
+export default HeaderLogo;

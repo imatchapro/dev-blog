@@ -1,5 +1,5 @@
-import React from 'react'
-import HeaderNavItem from '../atoms/HeaderNavItem'
+import React from 'react';
+import HeaderNavItem from '../atoms/HeaderNavItem';
 
 const HeaderNavigation: React.FC = () => {
   return (
@@ -10,7 +10,7 @@ const HeaderNavigation: React.FC = () => {
         <HeaderNavItem path="/contact">Contact</HeaderNavItem>
       </ul>
     </nav>
-  )
-}
+  );
+};
 
-export default HeaderNavigation
+export default HeaderNavigation;

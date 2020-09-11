@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const TheMainView: React.FC = () => {
   return (
@@ -11,7 +11,7 @@ const TheMainView: React.FC = () => {
         Welcome to my website.
       </h1>
     </section>
-  )
-}
+  );
+};
 
-export default TheMainView
+export default TheMainView;

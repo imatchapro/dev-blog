@@ -1,9 +1,9 @@
-import React from 'react'
-import { FiArrowLeft } from 'react-icons/fi'
-import { useRouter } from 'next/router'
+import React from 'react';
+import { FiArrowLeft } from 'react-icons/fi';
+import { useRouter } from 'next/router';
 
 const LinkBackPage: React.FC = () => {
-  const router = useRouter()
+  const router = useRouter();
 
   return (
     <button
@@ -13,7 +13,7 @@ const LinkBackPage: React.FC = () => {
       <FiArrowLeft />
       <span className="ml-2">Back</span>
     </button>
-  )
-}
+  );
+};
 
-export default LinkBackPage
+export default LinkBackPage;

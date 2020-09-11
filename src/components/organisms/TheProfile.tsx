@@ -1,6 +1,6 @@
-import React from 'react'
-import { FiGithub, FiTwitter, FiMapPin, FiMessageCircle } from 'react-icons/fi'
-import ProfileListItem from '../atoms/ProfileListItem'
+import React from 'react';
+import { FiGithub, FiTwitter, FiMapPin, FiMessageCircle } from 'react-icons/fi';
+import ProfileListItem from '../atoms/ProfileListItem';
 
 const TheProfile: React.FC = () => {
   return (
@@ -44,7 +44,7 @@ const TheProfile: React.FC = () => {
         </nav>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default TheProfile
+export default TheProfile;

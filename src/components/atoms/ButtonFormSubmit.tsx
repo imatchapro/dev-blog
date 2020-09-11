@@ -1,5 +1,5 @@
-import React from 'react'
-import { FiSend } from 'react-icons/fi'
+import React from 'react';
+import { FiSend } from 'react-icons/fi';
 
 const ButtonFormSubmit: React.FC = () => {
   return (
@@ -7,7 +7,7 @@ const ButtonFormSubmit: React.FC = () => {
       <FiSend />
       <span className="ml-2">送信</span>
     </button>
-  )
-}
+  );
+};
 
-export default ButtonFormSubmit
+export default ButtonFormSubmit;

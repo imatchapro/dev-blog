@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const TheFooter: React.FC = () => {
   return (
@@ -7,7 +7,7 @@ const TheFooter: React.FC = () => {
         © 2020 Yuta Takahashi&apos;s Website
       </small>
     </footer>
-  )
-}
+  );
+};
 
-export default TheFooter
+export default TheFooter;

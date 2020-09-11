@@ -1,8 +1,8 @@
-import React from 'react'
-import SectionPrivacy from '../molecules/SectionPrivacy'
-import HeadingPrivacy from '../atoms/HeadingPrivacy'
-import TextPrivacy from '../atoms/TextPrivacy'
-import ListDecimal from '../atoms/ListDecimal'
+import React from 'react';
+import SectionPrivacy from '../molecules/SectionPrivacy';
+import HeadingPrivacy from '../atoms/HeadingPrivacy';
+import TextPrivacy from '../atoms/TextPrivacy';
+import ListDecimal from '../atoms/ListDecimal';
 
 const ThePrivacyPolicy: React.FC = () => (
   <>
@@ -171,6 +171,6 @@ const ThePrivacyPolicy: React.FC = () => (
       </ListDecimal>
     </SectionPrivacy>
   </>
-)
+);
 
-export default ThePrivacyPolicy
+export default ThePrivacyPolicy;

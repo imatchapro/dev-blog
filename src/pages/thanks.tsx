@@ -1,15 +1,15 @@
-import React from 'react'
-import Link from 'next/link'
-import { NextPage } from 'next'
-import { useRouter } from 'next/router'
-import { FiArrowUp } from 'react-icons/fi'
-import PageHead from '../components/templates/PageHead'
-import PageContents from '../components/molecules/PageContents'
-import HeadingPage from '../components/atoms/HeadingPage'
+import React from 'react';
+import Link from 'next/link';
+import { NextPage } from 'next';
+import { useRouter } from 'next/router';
+import { FiArrowUp } from 'react-icons/fi';
+import PageHead from '../components/templates/PageHead';
+import PageContents from '../components/molecules/PageContents';
+import HeadingPage from '../components/atoms/HeadingPage';
 
 const Thanks: NextPage = () => {
-  const router = useRouter()
-  const { name } = router.query
+  const router = useRouter();
+  const { name } = router.query;
 
   return (
     <>
@@ -53,7 +53,7 @@ const Thanks: NextPage = () => {
         </div>
       </section>
     </>
-  )
-}
+  );
+};
 
-export default Thanks
+export default Thanks;

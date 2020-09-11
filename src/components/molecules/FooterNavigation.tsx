@@ -1,5 +1,5 @@
-import React from 'react'
-import FooterNavItem from '../atoms/FooterNavItem'
+import React from 'react';
+import FooterNavItem from '../atoms/FooterNavItem';
 
 const FooterNavigation: React.FC = () => {
   return (
@@ -11,7 +11,7 @@ const FooterNavigation: React.FC = () => {
         <FooterNavItem path="/privacy">Privacy Policy</FooterNavItem>
       </ul>
     </nav>
-  )
-}
+  );
+};
 
-export default FooterNavigation
+export default FooterNavigation;

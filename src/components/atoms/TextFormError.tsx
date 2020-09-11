@@ -1,5 +1,5 @@
-import React from 'react'
-import { FiAlertCircle } from 'react-icons/fi'
+import React from 'react';
+import { FiAlertCircle } from 'react-icons/fi';
 
 const TextFormError: React.FC = ({ children }) => {
   return (
@@ -7,7 +7,7 @@ const TextFormError: React.FC = ({ children }) => {
       <FiAlertCircle />
       <span className="ml-1">{children}</span>
     </p>
-  )
-}
+  );
+};
 
-export default TextFormError
+export default TextFormError;

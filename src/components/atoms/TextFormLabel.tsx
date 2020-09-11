@@ -1,8 +1,8 @@
-import React from 'react'
+import React from 'react';
 
 type Props = {
-  htmlFor: string
-}
+  htmlFor: string;
+};
 
 const TextFormLabel: React.FC<Props> = ({ htmlFor, children }) => {
   return (
@@ -12,7 +12,7 @@ const TextFormLabel: React.FC<Props> = ({ htmlFor, children }) => {
     >
       {children}
     </label>
-  )
-}
+  );
+};
 
-export default TextFormLabel
+export default TextFormLabel;
