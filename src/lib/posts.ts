@@ -51,18 +51,14 @@ export function getSplitPostsDataLength(): number {
 }
 
 export function getAllPostsPages(): { params: { page: string } }[] {
-  const length = getSplitPostsDataLength();
-  const allPostsPages = new Array(length)
+  return new Array(getSplitPostsDataLength())
     .fill(undefined)
-    .map((_, i) => `${i + 1}`);
-
-  allPostsPages.splice(0, 1);
-
-  return allPostsPages.map((page) => ({
-    params: {
-      page: page,
-    },
-  }));
+    .map((_, i) => ({
+      params: {
+        page: `${i + 1}`,
+      },
+    }))
+    .filter((_, i) => i !== 0);
 }
 
 export function getAllPostsIds(): { params: { id: string } }[] {
