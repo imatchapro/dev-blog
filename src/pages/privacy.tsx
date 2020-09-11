@@ -13,7 +13,7 @@ const Privacy: NextPage = () => {
     <>
       <PageHead
         title="Privacy Policy"
-        description="「Yuta Takahashi」のWEB開発ブログ兼ポートフォリオサイトのプライバシーポリシーのページ"
+        description="福岡県のフロントエンドエンジニアのWEB開発ブログ兼ポートフォリオサイトのプライバシーポリシーページ"
         type="website"
         image=""
       />
