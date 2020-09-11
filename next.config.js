@@ -6,8 +6,13 @@
 const { resolve } = require('path');
 
 const nextConfig = {
-  webpack: (config) => {
+  webpack: (config, { isServer }) => {
     config.resolve.alias['~'] = resolve(__dirname, 'src');
+
+    if (isServer) {
+      require('./src/scripts/generate-sitemap');
+    }
+
     return config;
   },
   env: {

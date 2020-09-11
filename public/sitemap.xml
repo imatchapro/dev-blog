@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://takayu.dev/contact</loc>
+  </url>
+
+  <url>
+    <loc>https://takayu.dev</loc>
+  </url>
+
+  <url>
+    <loc>https://takayu.dev/privacy</loc>
+  </url>
+
+  <url>
+    <loc>https://takayu.dev/thanks</loc>
+  </url>
+
+  <url>
+    <loc>https://takayu.dev/works</loc>
+  </url>
+
+  <url>
+    <loc>https://takayu.dev/blog</loc>
+  </url>
+
+  <url>
+    <loc>https://takayu.dev/blog/markdown-sample</loc>
+  </url>
+
+  <url>
+    <loc>https://takayu.dev/blog/test</loc>
+  </url>
+</urlset>
