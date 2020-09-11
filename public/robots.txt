@@ -1,0 +1,3 @@
+sitemap: https://takayu.dev/sitemap.xml
+user-agent: *
+allow: /*
