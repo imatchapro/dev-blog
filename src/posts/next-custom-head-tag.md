@@ -6,11 +6,11 @@ tldr: 'head要素を追加するためにNext.jsが提供している組み込�
 
 ## はじめに
 
-Next.js で静的サイトを作成する際に、SEO の観点から OGP やディスクリプションなどの設定が必ず必要になることが多いのでメモとして残しつつ、共有します。
+Next.jsで静的サイトを作成する際に、SEOの観点からOGPやディスクリプションなどの設定が必ず必要になることが多いのでメモとして残しつつ、共有します。
 
 ## 前提知識
 
-Next.js ではページコンポーネントに head 要素を追加することができる `next/head` という組み込みコンポーネントを提供しており、開発者は普通のコンポーネントを追加するように、ページに head 要素を追加することができます。
+Next.jsではページコンポーネントにhead要素を追加することができる`next/head`という組み込みコンポーネントを提供しており、開発者は普通のコンポーネントを追加するように、ページにhead要素を追加することができます。
 
 ```jsx
 import Head from 'next/head';
@@ -30,13 +30,13 @@ function IndexPage() {
 export default IndexPage;
 ```
 
-SEO フレンドリーなウェブサイトにするためには、head 要素に ディスクリプション や OGP などの情報を設定が必要不可欠です。
+SEOフレンドリーなウェブサイトにするためには、head要素にディスクリプションやOGPなどの情報を設定が必要不可欠です。
 
-この`next/head`を利用して OGP の設定を簡単に行えるコンポーネントを作成します。
+この`next/head`を利用してOGPの設定を簡単に行えるコンポーネントを作成します。
 
 ## サンプルコード
 
-ここではコンポーネント名を CustomHead としていますが、特に指定はないので何でも構いません。言語は TypeScript です。
+ここではコンポーネント名をCustomHeadとしていますが、特に指定はないので何でも構いません。言語はTypeScriptです。
 
 ```typescript jsx
 import React from 'react';
@@ -53,13 +53,7 @@ type Props = {
 const SITE_NAME = 'your site name';
 const TWITTER_ID = '@twitter_id';
 
-const CustomHead: React.FC<Props> = ({
-  title,
-  description,
-  contentsType,
-  url,
-  image,
-}): JSX.Element => (
+const CustomHead: React.FC<Props> = ({title, description, contentsType, url, image}): JSX.Element => (
   <Head>
     <title>{title + ' | ' + SITE_NAME}</title>
     <meta name="description" content={description} />
@@ -86,7 +80,7 @@ const CustomHead: React.FC<Props> = ({
 export default CustomHead;
 ```
 
-作成した CustomHead コンポーネント（以下、CustomHead）を任意のページコンポーネントにインポートし、Props に必要なデータを設定します。
+作成したCustomHeadコンポーネント（以下、CustomHead）を任意のページコンポーネントにインポートし、Propsに必要なデータを設定します。
 
 ```typescript jsx
 const IndexPage: NextPage = () => (
@@ -105,15 +99,19 @@ const IndexPage: NextPage = () => (
 export default IndexPage;
 ```
 
-このようにページコンポーネントにインポートした CustomHead に対して Prop を渡すだけで、カスタマイズした Head 要素をページに追加することができます。
+このようにページコンポーネントにインポートしたCustomHeadに対してPropを渡すだけで、カスタマイズしたhead要素をページに追加することができます。
 
-普通のコンポーネントの作成と考え方は変わらず単純なので、Next.js でウェブサイトを作成するときには、このようなコンポーネントを作成しておくと良いでしょう。
+普通のコンポーネントの作成と考え方は変わらず単純なので、Next.jsでウェブサイトを作成するときには、このようなコンポーネントを作成しておくと良いでしょう。
 
 ## 注意点
 
-\_document.{jsx, tsx}で`next/document`を使用して Head コンポーネントに title タグなどを指定している場合は、CustomHead の title タグと競合します。（title タグが２つ設置されてしまう）
+\_document.{jsx, tsx}で`next/document`を使用してHeadコンポーネントにtitleタグなどを指定している場合は、CustomHeadのtitleタグと競合してしまいます。
 
-空気を読んで title タグをマージしてくれることは今の所なさそうなので、場合に応じてどちらかのタグを削除するようにしてください。
+表示自体に問題はありませんが、titleタグが２つ存在すると意図しない設定になってしまう可能性があるので、場合に応じてどちらかのタグを削除するようにしてください。
+
+上記についてはこちらのissueが参考になると思います。
+
+- <a href="https://github.com/vercel/next.js/issues/9794" target="_blank" rel="noreferrer">Duplicate meta tags when using Head both in custom document and page</a>
 
 ## 参考にしたサイト
 
