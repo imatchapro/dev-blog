@@ -12,6 +12,7 @@ import HeadingPage from '../components/atoms/HeadingPage';
 import ButtonFormSubmit from '../components/atoms/ButtonFormSubmit';
 import TextInformation from '../components/atoms/TextInformation';
 import TextAlert from '../components/atoms/TextAlert';
+import Link from 'next/link';
 
 type FormValues = {
   name: string;
@@ -138,7 +139,14 @@ const Contact: NextPage = () => {
               <ThePrivacyPolicy />
             </div>
             <div className="mt-3">
-              <TextInformation>プライバシーポリシーに同意の上、送信してください。</TextInformation>
+              <TextInformation>
+                <Link href={'/privacy'}>
+                  <a className="underline" target="_blank">
+                    プライバシーポリシー
+                  </a>
+                </Link>
+                に同意の上、送信してください。
+              </TextInformation>
             </div>
             {response.message && (
               <div className="mt-3">
