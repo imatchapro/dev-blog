@@ -154,7 +154,34 @@ const ThePrivacyPolicy: React.FC = () => (
       </ListDecimal>
     </SectionPrivacy>
     <SectionPrivacy>
-      <HeadingPrivacy>第7条（プライバシーポリシーの変更）</HeadingPrivacy>
+      <HeadingPrivacy>第7条（アクセス解析ツールについて）</HeadingPrivacy>
+      <TextPrivacy>
+        本ウェブサイトでは、Googleによるアクセス解析ツール「Googleアナリティクス」を使用しています。このGoogleアナリティクスはデータの収集のためにCookieを使用しています。このデータは匿名で収集されており、個人を特定するものではありません。
+      </TextPrivacy>
+      <TextPrivacy>
+        この機能はCookieを無効にすることで収集を拒否することが出来ますので、お使いのブラウザの設定をご確認ください。この規約に関しての詳細は
+        <a
+          className="text-blue-600"
+          href="https://marketingplatform.google.com/about/analytics/terms/jp/"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Googleアナリティクスサービス利用規約
+        </a>
+        のページや
+        <a
+          className="text-blue-600"
+          href="https://policies.google.com/technologies/ads?hl=ja"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Googleポリシーと規約
+        </a>
+        ページをご覧ください。
+      </TextPrivacy>
+    </SectionPrivacy>
+    <SectionPrivacy>
+      <HeadingPrivacy>第8条（プライバシーポリシーの変更）</HeadingPrivacy>
       <ListDecimal>
         <li>
           <TextPrivacy>
