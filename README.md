@@ -5,7 +5,7 @@ powered by [Next.js](https://nextjs.org/).
 
 - It is created using Static HTML Export of Next.js.
 - The article is written in markdown.
-- [Vercel](https://vercel.com/).にデプロイしています。
+- Deploying to [Vercel](https://vercel.com/).
 
 ## Licence
 
