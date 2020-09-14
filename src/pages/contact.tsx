@@ -83,29 +83,19 @@ const Contact: NextPage = () => {
       <section>
         <HeadingPage>Contact</HeadingPage>
         <PageContents>
-          <form
-            id="contact-form"
-            onSubmit={handleSubmit(onSubmit)}
-            method="post"
-          >
+          <form id="contact-form" onSubmit={handleSubmit(onSubmit)} method="post">
             <FormItem>
               <TextFormLabel htmlFor="name">Name</TextFormLabel>
               <div className="sm:w-4/5">
                 <input
                   id="name"
-                  className={
-                    errors.name ? 'form-input-area-error' : 'form-input-area'
-                  }
+                  className={errors.name ? 'form-input-area-error' : 'form-input-area'}
                   type="text"
                   name="name"
                   placeholder="あなたのお名前"
                   ref={register({ required: true })}
                 />
-                {errors.name && (
-                  <TextFormError>
-                    お名前が正しく入力されていません
-                  </TextFormError>
-                )}
+                {errors.name && <TextFormError>お名前が正しく入力されていません</TextFormError>}
               </div>
             </FormItem>
             <FormItem>
@@ -113,9 +103,7 @@ const Contact: NextPage = () => {
               <div className="sm:w-4/5">
                 <input
                   id="email"
-                  className={
-                    errors.email ? 'form-input-area-error' : 'form-input-area'
-                  }
+                  className={errors.email ? 'form-input-area-error' : 'form-input-area'}
                   type="email"
                   name="email"
                   placeholder="example@email.com"
@@ -125,9 +113,7 @@ const Contact: NextPage = () => {
                   })}
                 />
                 {errors.email && (
-                  <TextFormError>
-                    メールアドレスが正しく入力されていません
-                  </TextFormError>
+                  <TextFormError>メールアドレスが正しく入力されていません</TextFormError>
                 )}
               </div>
             </FormItem>
@@ -136,18 +122,14 @@ const Contact: NextPage = () => {
               <div className="sm:w-4/5">
                 <textarea
                   id="message"
-                  className={
-                    errors.message ? 'form-input-area-error' : 'form-input-area'
-                  }
+                  className={errors.message ? 'form-input-area-error' : 'form-input-area'}
                   name="message"
                   placeholder="お問い合わせのメッセージ"
                   rows={6}
                   ref={register({ required: true })}
                 />
                 {errors.message && (
-                  <TextFormError>
-                    メッセージが正しく入力されていません
-                  </TextFormError>
+                  <TextFormError>メッセージが正しく入力されていません</TextFormError>
                 )}
               </div>
             </FormItem>
@@ -156,9 +138,7 @@ const Contact: NextPage = () => {
               <ThePrivacyPolicy />
             </div>
             <div className="mt-3">
-              <TextInformation>
-                プライバシーポリシーに同意の上、送信してください。
-              </TextInformation>
+              <TextInformation>プライバシーポリシーに同意の上、送信してください。</TextInformation>
             </div>
             {response.message && (
               <div className="mt-3">

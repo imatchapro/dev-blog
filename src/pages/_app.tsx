@@ -1,4 +1,5 @@
 import React from 'react';
+import 'prismjs';
 import Layout from '../components/templates/Layout';
 import '../styles/index.css';
 import '../styles/markdown.css';

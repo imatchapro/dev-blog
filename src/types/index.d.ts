@@ -8,7 +8,4 @@ export type PostContentData = {
 
 export type PostsData = Omit<PostContentData, 'contentHtml'>;
 
-export type PostFrontMatterData = Pick<
-  PostData,
-  'title' | 'published' | 'tldr'
->;
+export type PostFrontMatterData = Pick<PostData, 'title' | 'published' | 'tldr'>;

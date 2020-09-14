@@ -9,11 +9,7 @@ const TheContentsNavigation: React.FC = () => {
     <nav className="mt-12">
       <ul className="grid grid-cols-1 gap-12 sm:grid-cols-3 sm:gap-6">
         <li>
-          <ContentNavItemHeading
-            href={'/blog'}
-            text="Blog"
-            icon={<FiPenTool />}
-          />
+          <ContentNavItemHeading href={'/blog'} text="Blog" icon={<FiPenTool />} />
           <ContentNavItemText>
             WEBの開発について（主にフロントエンド側）のブログを書いています。
             <br />
@@ -22,11 +18,7 @@ const TheContentsNavigation: React.FC = () => {
           <ContentNavItemLink href={'/blog'} text="記事の一覧を見る" />
         </li>
         <li>
-          <ContentNavItemHeading
-            href={'/works'}
-            text="Works"
-            icon={<FiCode />}
-          />
+          <ContentNavItemHeading href={'/works'} text="Works" icon={<FiCode />} />
           <ContentNavItemText>
             個人で制作したアプリケーションやライブラリ、関わったプロダクトなどの実績を一覧で閲覧できるようにする予定です。
             <br />
@@ -35,11 +27,7 @@ const TheContentsNavigation: React.FC = () => {
           <ContentNavItemLink href={'/works'} text="実績の一覧を見る" />
         </li>
         <li>
-          <ContentNavItemHeading
-            href={'/contact'}
-            text="Contact"
-            icon={<FiMail />}
-          />
+          <ContentNavItemHeading href={'/contact'} text="Contact" icon={<FiMail />} />
           <ContentNavItemText>
             ブログの記事についての意見や質問、お仕事の依頼などのお問い合わせはこちらからお願いします。
             <br />

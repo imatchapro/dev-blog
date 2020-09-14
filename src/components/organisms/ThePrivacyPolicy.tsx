@@ -26,9 +26,7 @@ const ThePrivacyPolicy: React.FC = () => (
     </SectionPrivacy>
     <SectionPrivacy>
       <HeadingPrivacy>第3条（個人情報を収集・利用する目的）</HeadingPrivacy>
-      <TextPrivacy>
-        本ウェブサイトが個人情報を収集・利用する目的は、以下のとおりです。
-      </TextPrivacy>
+      <TextPrivacy>本ウェブサイトが個人情報を収集・利用する目的は、以下のとおりです。</TextPrivacy>
       <ListDecimal>
         <li>
           <TextPrivacy>

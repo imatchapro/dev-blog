@@ -8,11 +8,7 @@ const COUNT_PER_PAGE = 10;
 
 (async () => {
   const prettierConfig = await prettier.resolveConfig('../.prettierrc.js');
-  const pages = await globby([
-    'src/pages/**/*.tsx',
-    '!src/pages/_*.tsx',
-    '!src/pages/**/[*.tsx',
-  ]);
+  const pages = await globby(['src/pages/**/*.tsx', '!src/pages/_*.tsx', '!src/pages/**/[*.tsx']);
   const posts = await globby(['src/posts/*.md']);
   const generatePostsPages = () => {
     const postsPagesLength = Math.ceil(posts.length / COUNT_PER_PAGE);

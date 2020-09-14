@@ -13,9 +13,7 @@ type Props = {
   postData: PostContentData;
 };
 
-const BlogPost: NextPage<Props> = ({
-  postData: { contentHtml, published, tldr, title },
-}) => {
+const BlogPost: NextPage<Props> = ({ postData: { contentHtml, published, tldr, title } }) => {
   useEffect(() => {
     Prism.highlightAll();
   }, []);
@@ -25,16 +23,12 @@ const BlogPost: NextPage<Props> = ({
       <PageHead title={title} description={tldr} type="article" image="" />
       <article>
         <section>
-          <p className="mb-6 leading-none">
+          <p className="mb-3 text-base font-semibold sm:text-lg">
             <TextFormatDate dateString={published} />
           </p>
           <HeadingPostPage>{title}</HeadingPostPage>
-          <p className="text-sm mt-6 sm:text-lg">{tldr}</p>
         </section>
-        <section
-          className="markdown"
-          dangerouslySetInnerHTML={{ __html: contentHtml }}
-        />
+        <section className="markdown" dangerouslySetInnerHTML={{ __html: contentHtml }} />
         <BlogPagination>
           <LinkBackPage />
         </BlogPagination>

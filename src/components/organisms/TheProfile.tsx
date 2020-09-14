@@ -21,20 +21,13 @@ const TheProfile: React.FC = () => {
         </h1>
         <nav className="mt-4 sm:mt-6">
           <ul>
-            <ProfileListItem
-              icon={FiMessageCircle}
-              text="ReactとTypeScriptとアイラモルトが好き"
-            />
+            <ProfileListItem icon={FiMessageCircle} text="ReactとTypeScriptとアイラモルトが好き" />
             <ProfileListItem
               icon={FiMapPin}
               text="Fukuoka, Japan"
               href="https://www.google.co.jp/maps/place/%E7%A6%8F%E5%B2%A1%E7%9C%8C%E7%A6%8F%E5%B2%A1%E5%B8%82/@33.6496589,129.9837839,10z/data=!3m1!4b1!4m5!3m4!1s0x3541eda1e9848429:0xf60a729936398783!8m2!3d33.5901838!4d130.4016888"
             />
-            <ProfileListItem
-              icon={FiGithub}
-              text="@takayuu"
-              href="https://github.com/takayuu"
-            />
+            <ProfileListItem icon={FiGithub} text="@takayuu" href="https://github.com/takayuu" />
             <ProfileListItem
               icon={FiTwitter}
               text="@takayu_dev"

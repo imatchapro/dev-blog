@@ -1,10 +1,6 @@
 import React from 'react';
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
-import {
-  getAllPostsPages,
-  getSplitPostsData,
-  getSplitPostsDataLength,
-} from '../../../lib/posts';
+import { getAllPostsPages, getSplitPostsData, getSplitPostsDataLength } from '../../../lib/posts';
 import PageHead from '../../../components/templates/PageHead';
 import PageContents from '../../../components/molecules/PageContents';
 import BlogPostList from '../../../components/molecules/BlogPostList';
@@ -20,11 +16,7 @@ type Props = {
   nextPageLink: { href: string; as: string } | null;
 };
 
-const BlogPage: NextPage<Props> = ({
-  postsData,
-  prevPageLink,
-  nextPageLink,
-}) => {
+const BlogPage: NextPage<Props> = ({ postsData, prevPageLink, nextPageLink }) => {
   return (
     <>
       <PageHead
@@ -40,9 +32,7 @@ const BlogPage: NextPage<Props> = ({
         </PageContents>
         <BlogPagination>
           <LinkPrevPage href={prevPageLink.href} as={prevPageLink.as} />
-          {nextPageLink && (
-            <LinkNextPage href={nextPageLink.href} as={nextPageLink.as} />
-          )}
+          {nextPageLink && <LinkNextPage href={nextPageLink.href} as={nextPageLink.as} />}
         </BlogPagination>
       </section>
     </>

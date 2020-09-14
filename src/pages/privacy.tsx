@@ -39,9 +39,7 @@ const Privacy: NextPage = () => {
             </TextPrivacy>
           </SectionPrivacy>
           <SectionPrivacy>
-            <HeadingPrivacy>
-              第3条（個人情報を収集・利用する目的）
-            </HeadingPrivacy>
+            <HeadingPrivacy>第3条（個人情報を収集・利用する目的）</HeadingPrivacy>
             <TextPrivacy>
               本ウェブサイトが個人情報を収集・利用する目的は、以下のとおりです。
             </TextPrivacy>
@@ -52,9 +50,7 @@ const Privacy: NextPage = () => {
                 </TextPrivacy>
               </li>
               <li>
-                <TextPrivacy>
-                  重要なお知らせなど必要に応じたご連絡のため
-                </TextPrivacy>
+                <TextPrivacy>重要なお知らせなど必要に応じたご連絡のため</TextPrivacy>
               </li>
               <li>
                 <TextPrivacy>上記の用目的に付随する目的</TextPrivacy>
@@ -99,19 +95,13 @@ const Privacy: NextPage = () => {
                     </TextPrivacy>
                     <ListDecimal>
                       <li>
-                        <TextPrivacy>
-                          利用目的に第三者への提供を含むこと
-                        </TextPrivacy>
+                        <TextPrivacy>利用目的に第三者への提供を含むこと</TextPrivacy>
                       </li>
                       <li>
-                        <TextPrivacy>
-                          第三者に提供されるデータの項目
-                        </TextPrivacy>
+                        <TextPrivacy>第三者に提供されるデータの項目</TextPrivacy>
                       </li>
                       <li>
-                        <TextPrivacy>
-                          第三者への提供の手段または方法
-                        </TextPrivacy>
+                        <TextPrivacy>第三者への提供の手段または方法</TextPrivacy>
                       </li>
                       <li>
                         <TextPrivacy>
@@ -168,9 +158,7 @@ const Privacy: NextPage = () => {
                     </TextPrivacy>
                   </li>
                   <li>
-                    <TextPrivacy>
-                      その他法令に違反することとなる場合
-                    </TextPrivacy>
+                    <TextPrivacy>その他法令に違反することとなる場合</TextPrivacy>
                   </li>
                 </ListDecimal>
               </li>
