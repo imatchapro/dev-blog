@@ -5,16 +5,21 @@ import ProfileListItem from '../atoms/ProfileListItem';
 const TheProfile: React.FC = () => {
   return (
     <section className="mt-12 pt-12 border-t flex sm:mt-12 sm:pt-12">
-      <figure className="flex-shrink-0">
+      <picture className="flex-shrink-0">
+        <source
+          className="w-20 h-20 rounded bg-gray-300 sm:w-32 sm:h-32"
+          type="image/webp"
+          srcSet="/profile.webp"
+        />
         <img
           className="w-20 h-20 rounded bg-gray-300 sm:w-32 sm:h-32"
-          src="/profile.webp"
+          src="/profile.jpg"
           alt="Yuta Takahashi"
           width="256"
           height="256"
           loading="lazy"
         />
-      </figure>
+      </picture>
       <div className="ml-6 sm:ml-12">
         <h1 className="text-2xl text-gray-800 font-semibold leading-none sm:text-3xl">
           Yuta Takahashi
