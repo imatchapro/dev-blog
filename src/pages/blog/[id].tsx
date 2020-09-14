@@ -23,7 +23,7 @@ const BlogPost: NextPage<Props> = ({ postData: { contentHtml, published, tldr, t
       <PageHead title={title} description={tldr} type="article" image="" />
       <article>
         <section>
-          <p className="mb-3 text-base font-semibold sm:text-lg">
+          <p className="mb-3 text-base font-normal sm:text-lg">
             <TextFormatDate dateString={published} />
           </p>
           <HeadingPostPage>{title}</HeadingPostPage>
