@@ -27,7 +27,7 @@ const ModalCookieAgreement: React.FC = () => {
     display && (
       <div className="w-full fixed bottom-0 right-0 p-3">
         <div className="max-w-screen-md mx-auto rounded bg-gray-900 py-4 px-4 sm:px-6">
-          <p className="text-xs sm:text-sm">
+          <p className="text-xs leading-loose sm:text-sm">
             このサイトでは、Googleによるアクセス解析ツール「Googleアナリティクス」を使用しています。このGoogleアナリティクスはデータの収集のためにCookieを使用しています。サイトを利用することで、Cookieの使用に同意するものとします。
             <Link href={'/privacy'}>
               <a className="text-blue-700">プライバシーポリシーはこちら</a>

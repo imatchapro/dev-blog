@@ -7,7 +7,7 @@ import ContentNavItemLink from '../atoms/ContentNavItemLink';
 const TheContentsNavigation: React.FC = () => {
   return (
     <nav className="mt-12">
-      <ul className="grid grid-cols-1 gap-12 sm:grid-cols-3 sm:gap-6">
+      <ul className="grid grid-cols-1 gap-12 sm:grid-cols-3 sm:gap-8">
         <li>
           <ContentNavItemHeading href={'/blog'} text="Blog" icon={<FiPenTool />} />
           <ContentNavItemText>
