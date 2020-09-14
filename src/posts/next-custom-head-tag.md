@@ -30,7 +30,7 @@ function IndexPage() {
 export default IndexPage;
 ```
 
-SEOフレンドリーなウェブサイトにするためには、head要素にディスクリプションやOGPなどの情報を設定が必要不可欠です。
+SEOフレンドリーなウェブサイトにするためには、head要素にディスクリプションやOGPなどの設定が必要不可欠です。
 
 この`next/head`を利用してOGPの設定を簡単に行えるコンポーネントを作成します。
 
