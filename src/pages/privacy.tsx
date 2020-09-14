@@ -10,7 +10,7 @@ const Privacy: NextPage = () => {
     <>
       <PageHead
         title="Privacy Policy"
-        description="このウェブサイトのプライバシーポリシーを記載しているページです。"
+        description="このサイトのプライバシーポリシーを記載しているページです。"
         type="website"
         image=""
       />

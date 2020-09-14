@@ -19,7 +19,7 @@ const Blog: NextPage<Props> = ({ postsData, nextDataExists }) => {
     <>
       <PageHead
         title="Blog"
-        description="開発ブログの一覧ページです。フロントエンドの最新のトレンドや、TIPSの紹介などを中心に記事を書いていきます。"
+        description="開発ブログの一覧ページです。フロントエンドの最新のトレンドや、考察、技術の紹介などを中心に記事を書いています。"
         type="website"
         image=""
       />

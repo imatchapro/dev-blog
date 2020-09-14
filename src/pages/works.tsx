@@ -9,7 +9,7 @@ const Works: NextPage = () => {
     <>
       <PageHead
         title="Works"
-        description="個人で制作したアプリケーションやライブラリ、関わったプロダクトなどの実績を一覧で確認することができるページです。"
+        description="実績を一覧で確認することができるページです。個人で制作したアプリケーション、ライブラリ、関わったプロダクトなどをまとめています。"
         type="website"
         image=""
       />
