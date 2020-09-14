@@ -1,7 +1,7 @@
 ---
 title: 'Next.jsでHead要素用のコンポーネントを作成する'
 published: '2020-09-13'
-tldr: 'head要素を追加するためにNext.jsが提供している組み込みコンポーネントnext/headを利用して、柔軟に独自のheadタグを追加できるようにするTIPS'
+tldr: 'head要素を追加するためにNext.jsが提供している組み込みコンポーネントnext/headを利用して、柔軟に独自のheadタグを追加できるようにする'
 ---
 
 ## はじめに

@@ -21,7 +21,7 @@ const TheProfile: React.FC = () => {
         />
       </picture>
       <div className="ml-6 sm:ml-12">
-        <h1 className="text-2xl text-gray-800 font-semibold leading-none sm:text-3xl">
+        <h1 className="text-2xl text-gray-900 font-semibold leading-none sm:text-3xl">
           Yuta Takahashi
         </h1>
         <nav className="mt-4 sm:mt-6">

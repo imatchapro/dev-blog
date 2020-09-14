@@ -16,7 +16,7 @@ const BlogPostList: React.FC<Props> = ({ postsData }) => {
           <p className="text-sm">
             <TextFormatDate dateString={published} />
           </p>
-          <h2 className="text-gray-800 text-xl font-bold mt-2">
+          <h2 className="text-gray-900 text-xl font-bold mt-2">
             <Link href={'/blog/[id]'} as={`/blog/${id}`}>
               <a>{title}</a>
             </Link>

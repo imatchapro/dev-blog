@@ -17,7 +17,7 @@ const ProfileListItem: React.FC<Props> = ({ icon, href, text }) => {
           href={href}
           target="_blank"
           rel="noreferrer"
-          className="flex items-center text-sm sm:text-base hover:text-gray-800 transition-navigation"
+          className="flex items-center text-sm sm:text-base hover:text-gray-900 transition-navigation"
         >
           <Icon />
           <span className="ml-2">{text}</span>

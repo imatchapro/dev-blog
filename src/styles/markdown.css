@@ -8,31 +8,31 @@
 .markdown h4,
 .markdown h5,
 .markdown h6 {
-  @apply text-gray-800 font-bold;
+  @apply text-gray-900 font-bold;
 }
 
 .markdown h1 {
-  @apply mt-12 mb-6 text-2xl;
+  @apply mt-12 mb-6 text-3xl;
 }
 
 .markdown h2 {
-  @apply mt-12 mb-6 text-xl;
+  @apply mt-12 mb-6 text-2xl;
 }
 
 .markdown h3 {
-  @apply mt-12 mb-6 text-lg;
+  @apply mt-12 mb-6 text-xl;
 }
 
 .markdown h4 {
-  @apply mt-10 mb-6 text-base;
+  @apply mt-10 mb-6 text-lg;
 }
 
 .markdown h5 {
-  @apply mt-10 mb-4 text-sm;
+  @apply mt-10 mb-4 text-base;
 }
 
 .markdown h6 {
-  @apply mt-10 mb-4 text-xs;
+  @apply mt-10 mb-4 text-sm;
 }
 
 @screen sm {
@@ -66,7 +66,7 @@
 }
 
 .markdown blockquote {
-  @apply my-6 border-l-4 border-gray-600 pl-4 py-1 text-gray-600 font-normal;
+  @apply my-6 border-l-4 border-gray-600 pl-4 py-1 text-gray-700 font-normal;
 }
 
 .markdown blockquote p {

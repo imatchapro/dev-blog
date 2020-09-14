@@ -8,15 +8,15 @@
 
 /* Write you own custom component styles here */
 body {
-  @apply text-gray-600 leading-relaxed font-normal text-sm;
+  @apply text-gray-700 leading-relaxed font-normal text-base;
 }
 
 .blog-nav-link {
-  @apply inline-flex items-center font-medium;
+  @apply inline-flex items-center font-medium text-lg;
 }
 
 .blog-nav-link:hover {
-  @apply text-gray-800;
+  @apply text-gray-900;
 }
 
 .form-input-area {
@@ -37,12 +37,6 @@ body {
 
 .transition-navigation {
   @apply transition-colors duration-300 ease-in-out;
-}
-
-@screen sm {
-  body {
-    @apply text-base;
-  }
 }
 
 /* Start purging... */
