@@ -30,7 +30,7 @@ const ModalCookieAgreement: React.FC = () => {
           <p className="text-xs sm:text-sm">
             このサイトでは、Googleによるアクセス解析ツール「Googleアナリティクス」を使用しています。このGoogleアナリティクスはデータの収集のためにCookieを使用しています。サイトを利用することで、Cookieの使用に同意するものとします。
             <Link href={'/privacy'}>
-              <a className="text-blue-600">プライバシーポリシーはこちら</a>
+              <a className="text-blue-700">プライバシーポリシーはこちら</a>
             </Link>
           </p>
           <button

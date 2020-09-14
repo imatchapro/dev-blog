@@ -161,7 +161,7 @@ const ThePrivacyPolicy: React.FC = () => (
       <TextPrivacy>
         この機能はCookieを無効にすることで収集を拒否することが出来ますので、お使いのブラウザの設定をご確認ください。この規約に関しての詳細は
         <a
-          className="text-blue-600"
+          className="text-blue-700"
           href="https://marketingplatform.google.com/about/analytics/terms/jp/"
           rel="noopener noreferrer"
           target="_blank"
@@ -170,7 +170,7 @@ const ThePrivacyPolicy: React.FC = () => (
         </a>
         のページや
         <a
-          className="text-blue-600"
+          className="text-blue-700"
           href="https://policies.google.com/technologies/ads?hl=ja"
           rel="noopener noreferrer"
           target="_blank"

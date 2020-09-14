@@ -78,7 +78,7 @@
 }
 
 .markdown a[href] {
-  @apply text-blue-600 font-normal;
+  @apply text-blue-700 font-normal;
 }
 
 .markdown code {

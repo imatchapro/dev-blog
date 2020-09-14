@@ -31,7 +31,7 @@ const Thanks: NextPage = () => {
             <br />
             お急ぎの場合は
             <a
-              className="text-blue-600 font-medium hover:text-blue-400 transition-navigation"
+              className="text-blue-700 font-medium hover:text-blue-400 transition-navigation"
               href="https://twitter.com/takayu_dev"
               target="_blank"
               rel="noreferrer"

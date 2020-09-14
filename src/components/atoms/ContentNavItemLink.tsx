@@ -11,7 +11,7 @@ const ContentNavItemLink: React.FC<Props> = ({ href, text }) => {
   return (
     <p className="mt-4">
       <Link href={href}>
-        <a className="text-sm inline-flex items-center text-blue-600 font-semibold transition-navigation hover:text-blue-400">
+        <a className="text-sm inline-flex items-center text-blue-700 font-semibold transition-navigation hover:text-blue-400">
           <FiLink />
           <span className="ml-1">{text}</span>
         </a>

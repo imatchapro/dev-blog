@@ -24,7 +24,7 @@ const BlogPostList: React.FC<Props> = ({ postsData }) => {
           <p className="text-sm mt-3">{tldr}</p>
           <p className="mt-3 leading-normal">
             <Link href={'/blog/[id]'} as={`/blog/${id}`}>
-              <a className="text-blue-600 text-sm font-semibold inline-flex items-center transition-navigation hover:text-blue-400">
+              <a className="text-blue-700 text-sm font-semibold inline-flex items-center transition-navigation hover:text-blue-400">
                 <FiLink />
                 <span className="ml-1">この記事を見る</span>
               </a>
