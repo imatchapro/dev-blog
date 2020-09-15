@@ -139,7 +139,7 @@
   }
 
   .markdown code {
-    @apply text-base;
+    @apply text-sm;
   }
 
   .markdown pre {
