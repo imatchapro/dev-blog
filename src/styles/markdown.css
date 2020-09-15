@@ -82,7 +82,7 @@
 }
 
 .markdown code {
-  @apply bg-gray-200 rounded px-2 py-1 text-xs;
+  @apply bg-gray-200 rounded px-2 py-1 text-sm;
 }
 
 .markdown pre {
@@ -136,10 +136,6 @@
 
   .markdown blockquote {
     @apply pl-6;
-  }
-
-  .markdown code {
-    @apply text-sm;
   }
 
   .markdown pre {
