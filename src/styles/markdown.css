@@ -1,5 +1,5 @@
 .markdown {
-  @apply mt-12;
+  @apply mt-12 leading-loose;
 }
 
 .markdown h1,
@@ -62,7 +62,7 @@
 }
 
 .markdown > p {
-  @apply my-6 leading-loose;
+  @apply my-6;
 }
 
 .markdown blockquote {
