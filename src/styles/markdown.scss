@@ -1,0 +1,108 @@
+@mixin screen_sm() {
+  @screen sm {
+    @content;
+  }
+}
+
+@mixin heading() {
+  @apply text-gray-900 font-bold;
+}
+
+.markdown {
+  @apply mt-12 leading-loose;
+
+  h1 {
+    @apply mt-12 mb-6 text-3xl;
+    @include heading();
+  }
+
+  h2 {
+    @apply mt-12 mb-6 text-2xl;
+    @include heading();
+  }
+
+  h3 {
+    @apply mt-12 mb-6 text-xl;
+    @include heading();
+  }
+
+  h4 {
+    @apply mt-10 mb-6 text-lg;
+    @include heading();
+  }
+
+  h5 {
+    @apply mt-10 mb-4 text-base;
+    @include heading();
+  }
+
+  h6 {
+    @apply mt-10 mb-4 text-sm;
+    @include heading();
+  }
+
+  p {
+    @apply my-6;
+  }
+
+  a {
+    @apply text-blue-700;
+  }
+
+  img {
+    @apply max-w-full;
+  }
+
+  blockquote {
+    @apply border-l-4 border-gray-600 pl-4 py-1 text-gray-700 font-normal;
+    @include screen_sm() {
+      @apply pl-6;
+    }
+  }
+
+  pre {
+    @apply my-6 bg-gray-200 rounded py-4 px-4 overflow-auto;
+    @include screen_sm() {
+      @apply px-6;
+    }
+
+    &[class*='language-'] {
+      @apply px-4;
+      @include screen_sm() {
+        @apply px-6;
+      }
+    }
+
+    code {
+      @apply rounded-none p-0;
+    }
+  }
+
+  code {
+    @apply bg-gray-200 rounded px-2 py-1 text-sm;
+  }
+
+  ul {
+    @apply list-disc list-outside my-6 pl-4;
+    @include screen_sm() {
+      @apply pl-5;
+    }
+  }
+
+  ol {
+    @apply list-decimal list-outside my-6 pl-4;
+    @include screen_sm() {
+      @apply pl-5;
+    }
+  }
+
+  li {
+    & > ul,
+    & > ol {
+      @apply pl-4;
+      @include screen_sm() {
+        @apply pl-5;
+      }
+    }
+  }
+}

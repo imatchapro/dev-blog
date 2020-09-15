@@ -13,10 +13,10 @@ body {
 
 .blog-nav-link {
   @apply inline-flex items-center font-medium text-lg;
-}
 
-.blog-nav-link:hover {
-  @apply text-gray-900;
+  &:hover {
+    @apply text-gray-900;
+  }
 }
 
 .form-input-area {
@@ -29,10 +29,10 @@ body {
 
 .icon-button {
   @apply inline-flex items-center px-6 py-2 bg-blue-700 text-white rounded text-base;
-}
 
-.icon-button:hover {
-  @apply bg-blue-500;
+  &:hover {
+    @apply bg-blue-500;
+  }
 }
 
 .transition-navigation {
