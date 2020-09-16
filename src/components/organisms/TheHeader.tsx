@@ -1,12 +1,14 @@
 import React from 'react';
 import HeaderNavigation from '../molecules/HeaderNavigation';
 import HeaderLogo from '../atoms/HeaderLogo';
+import ButtonOpenMobileNav from '../atoms/ButtonOpenMobileNav';
 
 const TheHeader: React.FC = () => {
   return (
-    <header className="w-full fixed flex-shrink-0 flex items-center h-16 px-6 bg-white border-b sm:h-20 sm:px-12">
-      <HeaderLogo />
+    <header className="header">
+      <HeaderLogo>TAKAYU.DEV</HeaderLogo>
       <HeaderNavigation />
+      <ButtonOpenMobileNav />
     </header>
   );
 };

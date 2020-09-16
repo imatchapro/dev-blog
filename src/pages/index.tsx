@@ -14,7 +14,7 @@ const Home: NextPage = () => (
       image=""
     />
     <TheMainView />
-    <TheContentsNavigation />
+    <TheContentsNavigation rootClassName="mt-12" />
     <TheProfile />
   </>
 );

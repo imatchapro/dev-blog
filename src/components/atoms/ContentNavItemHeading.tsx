@@ -9,9 +9,9 @@ type Props = {
 
 const ContentNavItemHeading: React.FC<Props> = ({ href, text, icon }) => {
   return (
-    <h2>
+    <h2 className="leading-none">
       <Link href={href}>
-        <a className="flex items-center text-2xl font-semibold text-gray-900 leading-none">
+        <a className="inline-flex items-center text-2xl font-semibold text-gray-900 leading-none">
           {icon}
           <span className="ml-3">{text}</span>
         </a>

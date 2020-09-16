@@ -4,7 +4,7 @@ import { FiX } from 'react-icons/fi';
 
 const SESSION_STORAGE_KEY = 'COOKIE_AGREEMENT_MODAL';
 
-const ModalCookieAgreement: React.FC = () => {
+const TheModalCookieAgreement: React.FC = () => {
   const [display, setDisplay] = useState<boolean>(true);
 
   const handleClickCloseButton = () => {
@@ -25,7 +25,7 @@ const ModalCookieAgreement: React.FC = () => {
 
   return (
     display && (
-      <div className="w-full fixed bottom-0 right-0 p-3 sm:p-4">
+      <div className="w-full fixed bottom-0 right-0 p-3 z-30 sm:p-4">
         <div className="max-w-screen-md mx-auto rounded bg-gray-900 py-4 px-4 sm:px-6">
           <p className="text-xs text-gray-300 leading-loose sm:text-sm">
             このサイトでは、Googleによるアクセス解析ツール「Googleアナリティクス」を使用しています。このGoogleアナリティクスはデータの収集のためにCookieを使用しています。サイトを利用することで、Cookieの使用に同意するものとします。
@@ -46,4 +46,4 @@ const ModalCookieAgreement: React.FC = () => {
   );
 };
 
-export default ModalCookieAgreement;
+export default TheModalCookieAgreement;

@@ -7,8 +7,30 @@
 /* Stop purging. */
 
 /* Write you own custom component styles here */
+@mixin screen_sm() {
+  @screen sm {
+    @content;
+  }
+}
+
 body {
   @apply text-gray-700 leading-relaxed font-normal text-base;
+}
+
+.header {
+  @apply w-full flex-shrink-0 fixed flex items-center justify-between h-16 px-6 bg-white border-b z-10;
+
+  @include screen_sm() {
+    @apply h-20 px-12;
+  }
+}
+
+.open-mobile-menu {
+  @apply transform translate-x-0;
+}
+
+.close-mobile-menu {
+  @apply transform translate-x-full;
 }
 
 .blog-nav-link {

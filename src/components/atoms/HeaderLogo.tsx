@@ -1,10 +1,14 @@
 import React from 'react';
 import Link from 'next/link';
 
-const HeaderLogo: React.FC = () => {
+type Props = {
+  children: string;
+};
+
+const HeaderLogo: React.FC<Props> = ({ children }) => {
   return (
     <Link href="/">
-      <a className="text-lg font-bold text-gray-900 sm:text-2xl">TKY.DEV</a>
+      <a className="text-xl font-bold text-gray-900 sm:text-2xl">{children}</a>
     </Link>
   );
 };

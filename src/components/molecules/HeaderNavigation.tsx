@@ -3,7 +3,7 @@ import HeaderNavItem from '../atoms/HeaderNavItem';
 
 const HeaderNavigation: React.FC = () => {
   return (
-    <nav className="ml-auto">
+    <nav className="hidden sm:block">
       <ul className="flex">
         <HeaderNavItem path="/blog">Blog</HeaderNavItem>
         <HeaderNavItem path="/works">Works</HeaderNavItem>
