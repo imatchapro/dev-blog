@@ -38,7 +38,7 @@ SEOフレンドリーなウェブサイトにするためには、head要素に�
 
 ここではコンポーネント名をCustomHeadとしていますが、特に指定はないので何でも構いません。言語はTypeScriptです。
 
-```typescript jsx
+```tsx
 import React from 'react';
 import Head from 'next/head';
 
@@ -82,7 +82,7 @@ export default CustomHead;
 
 作成したCustomHeadコンポーネント（以下、CustomHead）を任意のページコンポーネントにインポートし、Propsに必要なデータを設定します。
 
-```typescript jsx
+```tsx
 const IndexPage: NextPage = () => (
   <div>
     <CustomHead
