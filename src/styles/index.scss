@@ -25,6 +25,14 @@ body {
   }
 }
 
+.header-logo {
+  @apply text-xl font-bold text-gray-900;
+
+  @include screen_sm() {
+    @apply text-2xl;
+  }
+}
+
 .open-mobile-menu {
   @apply transform translate-x-0;
 }

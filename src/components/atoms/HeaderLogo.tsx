@@ -8,7 +8,7 @@ type Props = {
 const HeaderLogo: React.FC<Props> = ({ children }) => {
   return (
     <Link href="/">
-      <a className="text-xl font-bold text-gray-900 sm:text-2xl">{children}</a>
+      <a className="header-logo">{children}</a>
     </Link>
   );
 };
