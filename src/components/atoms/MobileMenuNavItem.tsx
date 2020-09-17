@@ -5,7 +5,7 @@ const MobileMenuNavItem: React.FC = ({ children }) => {
   const { closeMobileMenu } = useContext(MobileMenu);
 
   return (
-    <li onClick={closeMobileMenu} className="mt-6 first:mt-0">
+    <li onClick={closeMobileMenu} className="mt-8 first:mt-0">
       {children}
     </li>
   );
