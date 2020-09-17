@@ -1,4 +1,4 @@
-My website as Developer.  
+My Development blog & portfolio.  
 powered by [Next.js](https://nextjs.org/).
 
 ## Feature
