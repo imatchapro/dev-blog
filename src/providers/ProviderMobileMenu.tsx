@@ -1,4 +1,5 @@
 import React, { createContext, useState } from 'react';
+import ScrollLock from 'react-scrolllock';
 
 type Props = {
   children: React.ReactNode;
@@ -6,21 +7,21 @@ type Props = {
 
 type StateMobileMenu = 'open-mobile-menu' | 'close-mobile-menu';
 
-type ContextMenuTrigger = {
+type ContextMobileMenu = {
   stateMobileMenu: StateMobileMenu;
   openMobileMenu: () => void;
   closeMobileMenu: () => void;
 };
 
-const defaultMenuTriggerContext: ContextMenuTrigger = {
+const defaultContext: ContextMobileMenu = {
   stateMobileMenu: 'close-mobile-menu',
   openMobileMenu: () => null,
   closeMobileMenu: () => null,
 };
 
-export const MenuTrigger = createContext<ContextMenuTrigger>(defaultMenuTriggerContext);
+export const MobileMenu = createContext<ContextMobileMenu>(defaultContext);
 
-const ProviderMenuTrigger: React.FC<Props> = ({ children }) => {
+const ProviderMobileMenu: React.FC<Props> = ({ children }) => {
   const [mobileMenu, setMobileMenu] = useState<StateMobileMenu>('close-mobile-menu');
 
   const openMobileMenu = () => {
@@ -32,10 +33,11 @@ const ProviderMenuTrigger: React.FC<Props> = ({ children }) => {
   };
 
   return (
-    <MenuTrigger.Provider value={{ stateMobileMenu: mobileMenu, openMobileMenu, closeMobileMenu }}>
+    <MobileMenu.Provider value={{ stateMobileMenu: mobileMenu, openMobileMenu, closeMobileMenu }}>
       {children}
-    </MenuTrigger.Provider>
+      <ScrollLock isActive={mobileMenu === 'open-mobile-menu'} />
+    </MobileMenu.Provider>
   );
 };
 
-export default ProviderMenuTrigger;
+export default ProviderMobileMenu;

@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
 import { FiX } from 'react-icons/fi';
-import { MenuTrigger } from '../../providers/ProviderMenuTrigger';
+import { MobileMenu } from '../../providers/ProviderMobileMenu';
 
 const ButtonCloseMobileNav: React.FC = () => {
-  const { closeMobileMenu } = useContext(MenuTrigger);
+  const { closeMobileMenu } = useContext(MobileMenu);
 
   return (
     <button

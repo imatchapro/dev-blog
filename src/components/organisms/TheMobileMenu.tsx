@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
-import { MenuTrigger } from '../../providers/ProviderMenuTrigger';
+import { MobileMenu } from '../../providers/ProviderMobileMenu';
 import HeaderLogo from '../atoms/HeaderLogo';
 import ButtonCloseMobileNav from '../atoms/ButtonCloseMobileNav';
 import TheContentsNavigation from './TheContentsNavigation';
 
-const TheMobileNavigation: React.FC = () => {
-  const { stateMobileMenu } = useContext(MenuTrigger);
+const TheMobileMenu: React.FC = () => {
+  const { stateMobileMenu } = useContext(MobileMenu);
 
   return (
     <div
@@ -23,4 +23,4 @@ const TheMobileNavigation: React.FC = () => {
   );
 };
 
-export default TheMobileNavigation;
+export default TheMobileMenu;
