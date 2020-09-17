@@ -6,7 +6,7 @@ tldr: 'Cloud Functionsを利用して、Cloud Firestoreに追加するデータ�
 
 ## はじめに
 
-すでに**Firebase CLI**を使用して開発を行っている環境を前提に解説をします。この解説で使用している開発言語は、React＋TypeScriptとなります。
+すでに**Firebase CLI**を使用して開発を行っている環境を前提に解説をします。この解説で使用している開発言語はTypeScriptとなります。
 
 - <a target="_blank" rel="noopener noreferrer" href="https://firebase.google.com/docs/cli?hl=ja">Firebase CLI リファレンス</a>
 
