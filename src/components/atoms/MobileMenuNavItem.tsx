@@ -2,10 +2,13 @@ import React, { useContext } from 'react';
 import { MobileMenu } from '../../providers/ProviderMobileMenu';
 
 const MobileMenuNavItem: React.FC = ({ children }) => {
-  const { closeMobileMenu } = useContext(MobileMenu);
+  const { handleChangeStateMobileMenu } = useContext(MobileMenu);
 
   return (
-    <li onClick={closeMobileMenu} className="mt-8 first:mt-0">
+    <li
+      onClick={() => handleChangeStateMobileMenu('CLOSE_MOBILE_MENU')}
+      className="mt-8 first:mt-0"
+    >
       {children}
     </li>
   );
