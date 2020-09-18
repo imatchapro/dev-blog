@@ -22,20 +22,20 @@ const defaultContext: ContextMobileMenu = {
 export const MobileMenu = createContext<ContextMobileMenu>(defaultContext);
 
 const ProviderMobileMenu: React.FC<Props> = ({ children }) => {
-  const [mobileMenu, setMobileMenu] = useState<StateMobileMenu>('close-mobile-menu');
+  const [stateMobileMenu, setStateMobileMenu] = useState<StateMobileMenu>('close-mobile-menu');
 
   const openMobileMenu = () => {
-    setMobileMenu('open-mobile-menu');
+    setStateMobileMenu('open-mobile-menu');
   };
 
   const closeMobileMenu = () => {
-    setMobileMenu('close-mobile-menu');
+    setStateMobileMenu('close-mobile-menu');
   };
 
   return (
-    <MobileMenu.Provider value={{ stateMobileMenu: mobileMenu, openMobileMenu, closeMobileMenu }}>
+    <MobileMenu.Provider value={{ stateMobileMenu, openMobileMenu, closeMobileMenu }}>
       {children}
-      <ScrollLock isActive={mobileMenu === 'open-mobile-menu'} />
+      <ScrollLock isActive={stateMobileMenu === 'open-mobile-menu'} />
     </MobileMenu.Provider>
   );
 };
