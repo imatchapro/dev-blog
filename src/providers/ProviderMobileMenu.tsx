@@ -1,4 +1,4 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useReducer } from 'react';
 import ScrollLock from 'react-scrolllock';
 
 type Props = {
@@ -7,11 +7,26 @@ type Props = {
 
 type StateMobileMenu = 'open-mobile-menu' | 'close-mobile-menu';
 
+type ActionMobileMenu = 'OPEN_MOBILE_MENU' | 'CLOSE_MOBILE_MENU';
+
 type ContextMobileMenu = {
   stateMobileMenu: StateMobileMenu;
   openMobileMenu: () => void;
   closeMobileMenu: () => void;
 };
+
+const reducerMobileMenu: React.Reducer<StateMobileMenu, ActionMobileMenu> = (state, action) => {
+  switch (action) {
+    case 'OPEN_MOBILE_MENU':
+      return 'open-mobile-menu';
+    case 'CLOSE_MOBILE_MENU':
+      return 'close-mobile-menu';
+    default:
+      throw new Error();
+  }
+};
+
+const initState: StateMobileMenu = 'close-mobile-menu';
 
 const defaultContext: ContextMobileMenu = {
   stateMobileMenu: 'close-mobile-menu',
@@ -22,14 +37,14 @@ const defaultContext: ContextMobileMenu = {
 export const MobileMenu = createContext<ContextMobileMenu>(defaultContext);
 
 const ProviderMobileMenu: React.FC<Props> = ({ children }) => {
-  const [stateMobileMenu, setStateMobileMenu] = useState<StateMobileMenu>('close-mobile-menu');
+  const [stateMobileMenu, dispatchMobileMenu] = useReducer(reducerMobileMenu, initState);
 
   const openMobileMenu = () => {
-    setStateMobileMenu('open-mobile-menu');
+    dispatchMobileMenu('OPEN_MOBILE_MENU');
   };
 
   const closeMobileMenu = () => {
-    setStateMobileMenu('close-mobile-menu');
+    dispatchMobileMenu('CLOSE_MOBILE_MENU');
   };
 
   return (
