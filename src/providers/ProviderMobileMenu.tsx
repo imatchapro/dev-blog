@@ -11,8 +11,7 @@ type ActionMobileMenu = 'OPEN_MOBILE_MENU' | 'CLOSE_MOBILE_MENU';
 
 type ContextMobileMenu = {
   stateMobileMenu: StateMobileMenu;
-  openMobileMenu: () => void;
-  closeMobileMenu: () => void;
+  handleChangeStateMobileMenu: (state: ActionMobileMenu) => void;
 };
 
 const reducerMobileMenu: React.Reducer<StateMobileMenu, ActionMobileMenu> = (state, action) => {
@@ -30,8 +29,7 @@ const initState: StateMobileMenu = 'close-mobile-menu';
 
 const defaultContext: ContextMobileMenu = {
   stateMobileMenu: 'close-mobile-menu',
-  openMobileMenu: () => null,
-  closeMobileMenu: () => null,
+  handleChangeStateMobileMenu: () => null,
 };
 
 export const MobileMenu = createContext<ContextMobileMenu>(defaultContext);
@@ -39,16 +37,12 @@ export const MobileMenu = createContext<ContextMobileMenu>(defaultContext);
 const ProviderMobileMenu: React.FC<Props> = ({ children }) => {
   const [stateMobileMenu, dispatchMobileMenu] = useReducer(reducerMobileMenu, initState);
 
-  const openMobileMenu = () => {
-    dispatchMobileMenu('OPEN_MOBILE_MENU');
-  };
-
-  const closeMobileMenu = () => {
-    dispatchMobileMenu('CLOSE_MOBILE_MENU');
+  const handleChangeStateMobileMenu = (state: ActionMobileMenu) => {
+    dispatchMobileMenu(state);
   };
 
   return (
-    <MobileMenu.Provider value={{ stateMobileMenu, openMobileMenu, closeMobileMenu }}>
+    <MobileMenu.Provider value={{ stateMobileMenu, handleChangeStateMobileMenu }}>
       {children}
       <ScrollLock isActive={stateMobileMenu === 'open-mobile-menu'} />
     </MobileMenu.Provider>
