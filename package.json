@@ -1,7 +1,13 @@
 {
-  "name": "dev-blog",
+  "name": "takayu-dev",
   "version": "0.1.0",
   "private": true,
+  "author": "Yuta Takahashi (https://github.com/takayuu/)",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com:takayuu/takayu-dev.git"
+  },
+  "homepage": "https://takayu.dev/",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
