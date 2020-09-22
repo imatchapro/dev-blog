@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import Anime from 'react-anime';
 import { FiCode, FiHome, FiMail, FiPenTool, FiShield } from 'react-icons/fi';
 import { MobileMenu } from '../../providers/ProviderMobileMenu';
 import ButtonCloseMobileNav from '../atoms/ButtonCloseMobileNav';
@@ -11,7 +12,7 @@ const TheMobileMenu: React.FC = () => {
   return (
     <div
       className={
-        'flex flex-row w-full h-screen transition-transform duration-500 ease-in-out fixed bg-white z-20 sm:hidden ' +
+        'flex flex-row w-full h-screen transition-transform fixed bg-white z-20 sm:hidden ' +
         stateMobileMenu
       }
     >
@@ -21,21 +22,30 @@ const TheMobileMenu: React.FC = () => {
       </header>
       <nav className="flex-shrink-0 w-full mt-16 py-12 px-6">
         <ul>
-          <MobileMenuNavItem>
-            <ContentNavItemHeading href={'/'} text="Home" icon={<FiHome />} />
-          </MobileMenuNavItem>
-          <MobileMenuNavItem>
-            <ContentNavItemHeading href={'/blog'} text="Blog" icon={<FiPenTool />} />
-          </MobileMenuNavItem>
-          <MobileMenuNavItem>
-            <ContentNavItemHeading href={'/works'} text="Works" icon={<FiCode />} />
-          </MobileMenuNavItem>
-          <MobileMenuNavItem>
-            <ContentNavItemHeading href={'/contact'} text="Contact" icon={<FiMail />} />
-          </MobileMenuNavItem>
-          <MobileMenuNavItem>
-            <ContentNavItemHeading href={'/privacy'} text="Privacy Policy" icon={<FiShield />} />
-          </MobileMenuNavItem>
+          <Anime
+            easing="easeOutQuint"
+            opacity={[0, 1]}
+            duration={800}
+            translateX={['30%', '0']}
+            delay={(el, index) => 100 * index}
+            direction={stateMobileMenu === 'open-mobile-menu' ? 'normal' : 'reverse'}
+          >
+            <MobileMenuNavItem>
+              <ContentNavItemHeading href={'/'} text="Home" icon={<FiHome />} />
+            </MobileMenuNavItem>
+            <MobileMenuNavItem>
+              <ContentNavItemHeading href={'/blog'} text="Blog" icon={<FiPenTool />} />
+            </MobileMenuNavItem>
+            <MobileMenuNavItem>
+              <ContentNavItemHeading href={'/works'} text="Works" icon={<FiCode />} />
+            </MobileMenuNavItem>
+            <MobileMenuNavItem>
+              <ContentNavItemHeading href={'/contact'} text="Contact" icon={<FiMail />} />
+            </MobileMenuNavItem>
+            <MobileMenuNavItem>
+              <ContentNavItemHeading href={'/privacy'} text="Privacy Policy" icon={<FiShield />} />
+            </MobileMenuNavItem>
+          </Anime>
         </ul>
       </nav>
     </div>
