@@ -1,4 +1,4 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useReducer } from 'react';
 import ScrollLock from 'react-scrolllock';
 
 type Props = {
@@ -7,35 +7,44 @@ type Props = {
 
 type StateMobileMenu = 'open-mobile-menu' | 'close-mobile-menu';
 
+type ActionMobileMenu = 'OPEN_MOBILE_MENU' | 'CLOSE_MOBILE_MENU';
+
 type ContextMobileMenu = {
   stateMobileMenu: StateMobileMenu;
-  openMobileMenu: () => void;
-  closeMobileMenu: () => void;
+  handleChangeStateMobileMenu: (state: ActionMobileMenu) => void;
 };
+
+const reducerMobileMenu: React.Reducer<StateMobileMenu, ActionMobileMenu> = (state, action) => {
+  switch (action) {
+    case 'OPEN_MOBILE_MENU':
+      return 'open-mobile-menu';
+    case 'CLOSE_MOBILE_MENU':
+      return 'close-mobile-menu';
+    default:
+      throw new Error();
+  }
+};
+
+const initState: StateMobileMenu = 'close-mobile-menu';
 
 const defaultContext: ContextMobileMenu = {
   stateMobileMenu: 'close-mobile-menu',
-  openMobileMenu: () => null,
-  closeMobileMenu: () => null,
+  handleChangeStateMobileMenu: () => null,
 };
 
 export const MobileMenu = createContext<ContextMobileMenu>(defaultContext);
 
 const ProviderMobileMenu: React.FC<Props> = ({ children }) => {
-  const [mobileMenu, setMobileMenu] = useState<StateMobileMenu>('close-mobile-menu');
+  const [stateMobileMenu, dispatchMobileMenu] = useReducer(reducerMobileMenu, initState);
 
-  const openMobileMenu = () => {
-    setMobileMenu('open-mobile-menu');
-  };
-
-  const closeMobileMenu = () => {
-    setMobileMenu('close-mobile-menu');
+  const handleChangeStateMobileMenu = (state: ActionMobileMenu) => {
+    dispatchMobileMenu(state);
   };
 
   return (
-    <MobileMenu.Provider value={{ stateMobileMenu: mobileMenu, openMobileMenu, closeMobileMenu }}>
+    <MobileMenu.Provider value={{ stateMobileMenu, handleChangeStateMobileMenu }}>
       {children}
-      <ScrollLock isActive={mobileMenu === 'open-mobile-menu'} />
+      <ScrollLock isActive={stateMobileMenu === 'open-mobile-menu'} />
     </MobileMenu.Provider>
   );
 };

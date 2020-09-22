@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { parseISO, format } from 'date-fns';
 
 type Props = {
@@ -6,9 +6,12 @@ type Props = {
 };
 
 const TextFormatDate: React.FC<Props> = ({ dateString }) => {
-  const date = parseISO(dateString);
+  const date = useMemo(() => {
+    const parseDate = parseISO(dateString);
+    return format(parseDate, 'yyyy.MM.dd');
+  }, [dateString]);
 
-  return <time dateTime={dateString}>{format(date, 'yyyy.MM.dd')}</time>;
+  return <time dateTime={dateString}>{date}</time>;
 };
 
 export default TextFormatDate;

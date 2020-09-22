@@ -16,7 +16,7 @@ const PageHead: React.FC<Props> = ({ title, description, type, image }): JSX.Ele
 
   useEffect(() => {
     setUrl(location.href);
-  });
+  }, []);
 
   return (
     <Head>
