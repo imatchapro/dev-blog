@@ -7,7 +7,7 @@ const MobileMenuNavItem: React.FC = ({ children }) => {
   return (
     <li
       onClick={() => handleChangeStateMobileMenu('CLOSE_MOBILE_MENU')}
-      className="mt-8 first:mt-0"
+      className="mb-8 first:mt-0"
     >
       {children}
     </li>
