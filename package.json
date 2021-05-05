@@ -55,7 +55,7 @@
     "typescript": "^4.2.4"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": "yarn lint"
+    "*.{js,jsx,ts,tsx}": "yarn run lint"
   },
   "husky": {
     "hooks": {
