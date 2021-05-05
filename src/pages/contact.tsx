@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { NextPage } from 'next';
 import { useRouter } from 'next/router';
-import { useForm, SubmitHandler } from 'react-hook-form';
+import { SubmitHandler, useForm } from 'react-hook-form';
 import PageHead from '../components/templates/PageHead';
 import ThePrivacyPolicy from '../components/organisms/ThePrivacyPolicy';
 import PageContents from '../components/molecules/PageContents';
@@ -35,7 +35,11 @@ const Contact: NextPage = () => {
     message: 'エラーが発生しました。もう一度やり直してください。',
   };
   const [response, setResponse] = useState<ResponseMessage>(resInitMessage);
-  const { register, handleSubmit, errors } = useForm<FormValues>();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<FormValues>();
   const router = useRouter();
 
   const resetForm = () => {
@@ -94,7 +98,7 @@ const Contact: NextPage = () => {
                   type="text"
                   name="name"
                   placeholder="あなたのお名前"
-                  ref={register({ required: true })}
+                  {...register('name', { required: true })}
                 />
                 {errors.name && <TextFormError>お名前が正しく入力されていません</TextFormError>}
               </div>
@@ -108,7 +112,7 @@ const Contact: NextPage = () => {
                   type="email"
                   name="email"
                   placeholder="example@email.com"
-                  ref={register({
+                  {...register('email', {
                     required: true,
                     pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
                   })}
@@ -127,7 +131,7 @@ const Contact: NextPage = () => {
                   name="message"
                   placeholder="お問い合わせのメッセージ"
                   rows={6}
-                  ref={register({ required: true })}
+                  {...register('message', { required: true })}
                 />
                 {errors.message && (
                   <TextFormError>メッセージが正しく入力されていません</TextFormError>
