@@ -5,7 +5,12 @@
 
 const { resolve } = require('path');
 
-const nextConfig = {
+const withTM = require('next-transpile-modules')([]);
+
+module.exports = withTM({
+  future: {
+    webpack5: true,
+  },
   webpack: (config, { isServer }) => {
     config.resolve.alias['~'] = resolve(__dirname, 'src');
 
@@ -18,6 +23,4 @@ const nextConfig = {
   env: {
     static_form_access_key: process.env.STATIC_FORM_ACCESS_KEY,
   },
-};
-
-module.exports = nextConfig;
+});
