@@ -1,6 +1,5 @@
 import React from 'react';
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
-import { getAllPostsPages, getSplitPostsData, getSplitPostsDataLength } from '../../../lib/posts';
 import PageHead from '../../../components/templates/PageHead';
 import PageContents from '../../../components/molecules/PageContents';
 import BlogPostList from '../../../components/molecules/BlogPostList';
@@ -8,15 +7,12 @@ import BlogPagination from '../../../components/molecules/BlogPagination';
 import HeadingPage from '../../../components/atoms/HeadingPage';
 import LinkPrevPage from '../../../components/atoms/LinkPrevPage';
 import LinkNextPage from '../../../components/atoms/LinkNextPage';
-import { PostsData } from '../../../types';
+import { getPostsPagesData } from '../../../lib/api';
+import { PostsPagesData } from '../../../types';
 
-type Props = {
-  postsData: PostsData[];
-  prevPageLink: { href: string; as: string };
-  nextPageLink: { href: string; as: string } | null;
-};
+type Props = PostsPagesData;
 
-const BlogPage: NextPage<Props> = ({ postsData, prevPageLink, nextPageLink }) => {
+const BlogPage: NextPage<Props> = ({ posts, prev, next }) => {
   return (
     <>
       <PageHead
@@ -28,11 +24,15 @@ const BlogPage: NextPage<Props> = ({ postsData, prevPageLink, nextPageLink }) =>
       <section>
         <HeadingPage>Blog</HeadingPage>
         <PageContents>
-          <BlogPostList postsData={postsData} />
+          <BlogPostList postsData={posts} />
         </PageContents>
         <BlogPagination>
-          <LinkPrevPage href={prevPageLink.href} as={prevPageLink.as} />
-          {nextPageLink && <LinkNextPage href={nextPageLink.href} as={nextPageLink.as} />}
+          {prev ? (
+            <LinkPrevPage href={'/blog/page/[number]'} as={`/blog/page/${prev}`} />
+          ) : (
+            <LinkPrevPage href={'/blog/'} as={'/blog/'} />
+          )}
+          {next && <LinkNextPage href={'/blog/page/[number]'} as={`/blog/page/${next}`} />}
         </BlogPagination>
       </section>
     </>
@@ -40,7 +40,12 @@ const BlogPage: NextPage<Props> = ({ postsData, prevPageLink, nextPageLink }) =>
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = getAllPostsPages();
+  const { pages } = await getPostsPagesData();
+  const paths = pages.map((page) => ({
+    params: {
+      number: String(page),
+    },
+  }));
 
   return {
     paths,
@@ -49,26 +54,12 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const pageNum = +params.page;
-  const postsData = await getSplitPostsData(pageNum);
-  const pageLength = await getSplitPostsDataLength();
-  const prevPageLink =
-    params.page === '2'
-      ? { href: '/blog', as: '/blog' }
-      : { href: '/blog/page/[page]', as: `/blog/page/${pageNum - 1}` };
-  const nextPageLink =
-    pageLength === pageNum
-      ? null
-      : {
-          href: '/blog/page/[page]',
-          as: `/blog/page/${pageNum + 1}`,
-        };
+  const page = Number(params.number);
+  const data = await getPostsPagesData(page);
 
   return {
     props: {
-      postsData,
-      prevPageLink,
-      nextPageLink,
+      ...data,
     },
   };
 };

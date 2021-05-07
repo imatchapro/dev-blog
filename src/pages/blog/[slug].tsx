@@ -1,34 +1,33 @@
 import React, { useEffect } from 'react';
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import Prism from 'prismjs';
-import { getAllPostsIds, getPostData } from '../../lib/posts';
+import { getPostsData } from '../../lib/api';
 import PageHead from '../../components/templates/PageHead';
 import BlogPagination from '../../components/molecules/BlogPagination';
 import HeadingPostPage from '../../components/atoms/HeadingPostPage';
 import LinkBackPage from '../../components/atoms/LinkBackPage';
 import TextFormatDate from '../../components/atoms/TextFormatDate';
-import { PostContentData } from '../../types';
+import markdownToHtml from '../../lib/markdownToHtml';
+import { PostData } from '../../types';
 
-type Props = {
-  postData: PostContentData;
-};
+type Props = PostData;
 
-const BlogPost: NextPage<Props> = ({ postData: { contentHtml, published, tldr, title } }) => {
+const BlogPost: NextPage<Props> = ({ content, meta }) => {
   useEffect(() => {
     Prism.highlightAll();
   }, []);
 
   return (
     <>
-      <PageHead title={title} description={tldr} type="article" image="" />
+      <PageHead title={meta.title} description={meta.tldr} type="article" image="" />
       <article>
         <section>
           <p className="mb-3 text-base font-normal sm:text-lg">
-            <TextFormatDate dateString={published} />
+            <TextFormatDate dateString={meta.published} />
           </p>
-          <HeadingPostPage>{title}</HeadingPostPage>
+          <HeadingPostPage>{meta.title}</HeadingPostPage>
         </section>
-        <section className="markdown" dangerouslySetInnerHTML={{ __html: contentHtml }} />
+        <section className="markdown" dangerouslySetInnerHTML={{ __html: content }} />
         <BlogPagination>
           <LinkBackPage />
         </BlogPagination>
@@ -38,7 +37,12 @@ const BlogPost: NextPage<Props> = ({ postData: { contentHtml, published, tldr, t
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = getAllPostsIds();
+  const data = await getPostsData();
+  const paths = data.map((post) => ({
+    params: {
+      slug: post.slug,
+    },
+  }));
 
   return {
     paths,
@@ -47,11 +51,14 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const postData = await getPostData(params.id);
+  const data = await getPostsData();
+  const post = data.find((post) => post.slug === params.slug);
+  const content = await markdownToHtml(post.content);
 
   return {
     props: {
-      postData,
+      ...post,
+      content,
     },
   };
 };

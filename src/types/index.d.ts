@@ -1,11 +1,18 @@
-export type PostContentData = {
-  id: string;
-  published: string;
-  title: string;
-  tldr: string;
-  contentHtml: string;
+export type PostData = {
+  slug: string;
+  meta: PostMetaData;
+  content: string;
 };
 
-export type PostsData = Omit<PostContentData, 'contentHtml'>;
+export type PostMetaData = {
+  title: string;
+  published: string;
+  tldr: string;
+};
 
-export type PostFrontMatterData = Pick<PostData, 'title' | 'published' | 'tldr'>;
+export type PostsPagesData = {
+  pages: number[];
+  prev: number | null;
+  next: number | null;
+  posts: PostData[];
+};
