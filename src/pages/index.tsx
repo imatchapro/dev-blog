@@ -7,17 +7,11 @@ import TheProfile from '../components/organisms/TheProfile';
 import useAbsoluteUrl from '../hooks/useAbsoluteUrl';
 
 const Home: NextPage = () => {
-  const absolute_url = useAbsoluteUrl();
-
   return (
     <>
       <NextSeo
         title="Home"
         description="takayu.devは、主にフロントエンドを中心とした開発ブログや、個人で制作したアプリケーション、ライブラリ、関わったプロダクトの一覧をまとめているサイトです。"
-        canonical={absolute_url}
-        openGraph={{
-          url: absolute_url,
-        }}
       />
       <TheMainView />
       <TheContentsNavigation rootClassName="mt-12" />

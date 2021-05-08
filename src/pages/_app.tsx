@@ -8,14 +8,19 @@ import Layout from '../components/templates/Layout';
 import '../styles/index.scss';
 import '../styles/markdown.scss';
 import 'prism-themes/themes/prism-nord.css';
+import useAbsoluteUrl from '../hooks/useAbsoluteUrl';
 
-const MyApp: React.FC<AppProps> = ({ Component, pageProps }): JSX.Element => (
-  <ProviderMobileMenu>
-    <Layout>
-      <DefaultSeo {...SEO} />
-      <Component {...pageProps} />
-    </Layout>
-  </ProviderMobileMenu>
-);
+const MyApp: React.FC<AppProps> = ({ Component, pageProps }): JSX.Element => {
+  const url = useAbsoluteUrl();
+
+  return (
+    <ProviderMobileMenu>
+      <Layout>
+        <DefaultSeo {...SEO} canonical={url} openGraph={{ url }} />
+        <Component {...pageProps} />
+      </Layout>
+    </ProviderMobileMenu>
+  );
+};
 
 export default MyApp;

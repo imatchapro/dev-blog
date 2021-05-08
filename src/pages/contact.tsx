@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { NextPage } from 'next';
 import { useRouter } from 'next/router';
 import { NextSeo } from 'next-seo';
-import useAbsoluteUrl from '../hooks/useAbsoluteUrl';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import ThePrivacyPolicy from '../components/organisms/ThePrivacyPolicy';
 import PageContents from '../components/molecules/PageContents';
@@ -27,8 +26,6 @@ type ResponseMessage = {
 };
 
 const Contact: NextPage = () => {
-  const absolute_url = useAbsoluteUrl();
-
   const resInitMessage: ResponseMessage = {
     type: '',
     message: '',
@@ -85,10 +82,6 @@ const Contact: NextPage = () => {
       <NextSeo
         title="Contact"
         description="お問い合わせのページです。フォームからお問い合わせをすることで、サイトの所有者にお問い合わせをすることができます。"
-        canonical={absolute_url}
-        openGraph={{
-          url: absolute_url,
-        }}
       />
       <section>
         <HeadingPage>Contact</HeadingPage>

@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import { NextSeo } from 'next-seo';
-import useAbsoluteUrl from '../../hooks/useAbsoluteUrl';
 import Prism from 'prismjs';
 import { getPostsData } from '../../lib/api';
 import BlogPagination from '../../components/molecules/BlogPagination';
@@ -14,22 +13,13 @@ import { PostData } from '../../types';
 type Props = PostData;
 
 const BlogPost: NextPage<Props> = ({ content, meta }) => {
-  const absolute_url = useAbsoluteUrl();
-
   useEffect(() => {
     Prism.highlightAll();
   }, []);
 
   return (
     <>
-      <NextSeo
-        title={meta.title}
-        description={meta.tldr}
-        canonical={absolute_url}
-        openGraph={{
-          url: absolute_url,
-        }}
-      />
+      <NextSeo title={meta.title} description={meta.tldr} />
       <article>
         <section>
           <p className="mb-3 text-base font-normal sm:text-lg">
