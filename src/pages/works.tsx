@@ -1,17 +1,22 @@
 import React from 'react';
 import { NextPage } from 'next';
-import PageHead from '../components/templates/PageHead';
 import PageContents from '../components/molecules/PageContents';
 import HeadingPage from '../components/atoms/HeadingPage';
+import { NextSeo } from 'next-seo';
+import useAbsoluteUrl from '../hooks/useAbsoluteUrl';
 
 const Works: NextPage = () => {
+  const absolute_url = useAbsoluteUrl();
+
   return (
     <>
-      <PageHead
+      <NextSeo
         title="Works"
         description="実績を一覧で確認することができるページです。個人で制作したアプリケーション、ライブラリ、関わったプロダクトなどをまとめています。"
-        type="website"
-        image=""
+        canonical={absolute_url}
+        openGraph={{
+          url: absolute_url,
+        }}
       />
       <section>
         <HeadingPage>Works</HeadingPage>

@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
+import { NextSeo } from 'next-seo';
+import useAbsoluteUrl from '../../hooks/useAbsoluteUrl';
 import Prism from 'prismjs';
 import { getPostsData } from '../../lib/api';
-import PageHead from '../../components/templates/PageHead';
 import BlogPagination from '../../components/molecules/BlogPagination';
 import HeadingPostPage from '../../components/atoms/HeadingPostPage';
 import LinkBackPage from '../../components/atoms/LinkBackPage';
@@ -13,13 +14,22 @@ import { PostData } from '../../types';
 type Props = PostData;
 
 const BlogPost: NextPage<Props> = ({ content, meta }) => {
+  const absolute_url = useAbsoluteUrl();
+
   useEffect(() => {
     Prism.highlightAll();
   }, []);
 
   return (
     <>
-      <PageHead title={meta.title} description={meta.tldr} type="article" image="" />
+      <NextSeo
+        title={meta.title}
+        description={meta.tldr}
+        canonical={absolute_url}
+        openGraph={{
+          url: absolute_url,
+        }}
+      />
       <article>
         <section>
           <p className="mb-3 text-base font-normal sm:text-lg">

@@ -1,6 +1,7 @@
 import React from 'react';
 import { GetStaticProps, NextPage } from 'next';
-import PageHead from '../../components/templates/PageHead';
+import { NextSeo } from 'next-seo';
+import useAbsoluteUrl from '../../hooks/useAbsoluteUrl';
 import PageContents from '../../components/molecules/PageContents';
 import BlogPostList from '../../components/molecules/BlogPostList';
 import BlogPagination from '../../components/molecules/BlogPagination';
@@ -12,13 +13,17 @@ import { PostsPagesData } from '../../types';
 type Props = PostsPagesData;
 
 const Blog: NextPage<Props> = ({ posts, next }) => {
+  const absolute_url = useAbsoluteUrl();
+
   return (
     <>
-      <PageHead
+      <NextSeo
         title="Blog"
         description="開発ブログの一覧ページです。フロントエンドの最新のトレンドや、考察、技術の紹介などを中心に記事を書いています。"
-        type="website"
-        image=""
+        canonical={absolute_url}
+        openGraph={{
+          url: absolute_url,
+        }}
       />
       <section>
         <HeadingPage>Blog</HeadingPage>

@@ -2,22 +2,27 @@ import React from 'react';
 import Link from 'next/link';
 import { NextPage } from 'next';
 import { useRouter } from 'next/router';
+import { NextSeo } from 'next-seo';
 import { FiArrowUp } from 'react-icons/fi';
-import PageHead from '../components/templates/PageHead';
 import PageContents from '../components/molecules/PageContents';
 import HeadingPage from '../components/atoms/HeadingPage';
+import useAbsoluteUrl from '../hooks/useAbsoluteUrl';
 
 const Thanks: NextPage = () => {
+  const absolute_url = useAbsoluteUrl();
   const router = useRouter();
   const { name } = router.query;
 
   return (
     <>
-      <PageHead
+      <NextSeo
         title="Thank you!!"
         description="お問い合わせが完了したことのお知らせとお礼のページです。"
-        type="website"
-        image=""
+        noindex={true}
+        canonical={absolute_url}
+        openGraph={{
+          url: absolute_url,
+        }}
       />
       <section className="text-center">
         <HeadingPage>Thank you!!</HeadingPage>
