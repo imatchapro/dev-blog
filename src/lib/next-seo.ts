@@ -1,13 +1,12 @@
 import type { NextSeoProps } from 'next-seo';
-import { site_name } from './src/lib/constants';
 
 export default {
-  titleTemplate: `%s | ${site_name}`,
-  defaultTitle: site_name,
+  titleTemplate: `%s | ${process.env.SITE_NAME}`,
+  defaultTitle: process.env.SITE_NAME,
   openGraph: {
     type: 'website',
     locale: 'ja_JP',
-    site_name: site_name,
+    site_name: process.env.SITE_NAME,
   },
   twitter: {
     handle: '@takayu_dev',

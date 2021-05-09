@@ -1,7 +1,7 @@
 import React from 'react';
 import type { AppProps } from 'next/app';
 import { DefaultSeo } from 'next-seo';
-import SEO from '../../next-seo.config';
+import SEO from '../lib/next-seo';
 import 'prismjs';
 import ProviderMobileMenu from '../providers/ProviderMobileMenu';
 import Layout from '../components/templates/Layout';

@@ -49,7 +49,7 @@ const Contact: NextPage = () => {
 
   const onSubmit: SubmitHandler<FormValues> = async (values) => {
     const post = await Object.assign(values, {
-      accessKey: process.env.static_form_access_key,
+      accessKey: process.env.NEXT_PUBLIC_STATIC_FORM_ACCESS_KEY,
     });
 
     try {

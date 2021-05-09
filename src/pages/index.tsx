@@ -12,7 +12,8 @@ const Home: NextPage = () => (
       description="takayu.devは、主にフロントエンドを中心とした開発ブログや、個人で制作したアプリケーション、ライブラリ、関わったプロダクトの一覧をまとめているサイトです。"
     />
     <TheMainView />
-    <TheContentsNavigation rootClassName="mt-12" />
+    <div className="mt-12" />
+    <TheContentsNavigation />
     <TheProfile />
   </>
 );

@@ -38,15 +38,16 @@ const BlogPage: NextPage<Props> = ({ posts, prev, next }) => {
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const { pages } = await getPostsPagesData();
-  const paths = pages.map((page) => ({
-    params: {
-      number: String(page),
-    },
-  }));
+  const { paths } = await getPostsPagesData();
 
   return {
-    paths,
+    paths: paths
+      ? paths.map((page) => ({
+          params: {
+            number: String(page),
+          },
+        }))
+      : [],
     fallback: false,
   };
 };

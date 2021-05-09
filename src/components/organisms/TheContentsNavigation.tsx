@@ -4,13 +4,9 @@ import ContentNavItemHeading from '../atoms/ContentNavItemHeading';
 import ContentNavItemText from '../atoms/ContentNavItemText';
 import ContentNavItemLink from '../atoms/ContentNavItemLink';
 
-type Props = {
-  rootClassName?: string;
-};
-
-const TheContentsNavigation: React.FC<Props> = ({ rootClassName }) => {
+const TheContentsNavigation: React.FC = () => {
   return (
-    <nav className={rootClassName}>
+    <nav>
       <ul className="grid grid-cols-1 gap-12 sm:grid-cols-3 sm:gap-8">
         <li>
           <ContentNavItemHeading href={'/blog'} text="Blog" icon={<FiPenTool />} />

@@ -33,7 +33,7 @@ export async function getPostsPagesData(page = 1): Promise<PostsPagesData> {
   });
 
   return {
-    pages: pages,
+    paths: pages.slice(1).length ? pages.slice(1) : null,
     prev: 2 < page ? page - 1 : null,
     next: total > page ? page + 1 : null,
     posts: posts[page - 1],

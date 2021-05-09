@@ -11,7 +11,7 @@ export type PostMetaData = {
 };
 
 export type PostsPagesData = {
-  pages: number[];
+  paths: number[] | null;
   prev: number | null;
   next: number | null;
   posts: PostData[];
