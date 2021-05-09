@@ -1,3 +1,9 @@
-sitemap: https://takayu.dev/sitemap.xml
-user-agent: *
-allow: /*
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://takayu.dev
+
+# Sitemaps
+Sitemap: https://takayu.dev/sitemap.xml

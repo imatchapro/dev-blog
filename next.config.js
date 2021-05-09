@@ -12,16 +12,9 @@ module.exports = withPlugins([withTM], {
   future: {
     webpack5: true,
   },
-  webpack: (config, { isServer }) => {
+  webpack: (config) => {
     config.resolve.alias['~'] = resolve(__dirname, 'src');
 
-    if (isServer) {
-      require('./src/lib/generate-sitemap');
-    }
-
     return config;
-  },
-  env: {
-    static_form_access_key: process.env.STATIC_FORM_ACCESS_KEY,
   },
 });
