@@ -4,22 +4,22 @@ import { DefaultSeo } from 'next-seo';
 import SEO from '../lib/next-seo';
 import 'prismjs';
 import ProviderMobileMenu from '../providers/ProviderMobileMenu';
-import Layout from '../components/templates/Layout';
 import '../styles/index.scss';
 import '../styles/markdown.scss';
 import 'prism-themes/themes/prism-nord.css';
 import useAbsoluteUrl from '../hooks/useAbsoluteUrl';
+import { ChakraProvider } from '@chakra-ui/react';
 
 const MyApp: React.FC<AppProps> = ({ Component, pageProps }): JSX.Element => {
   const url = useAbsoluteUrl();
 
   return (
-    <ProviderMobileMenu>
-      <Layout>
+    <ChakraProvider>
+      <ProviderMobileMenu>
         <DefaultSeo {...SEO} canonical={url} openGraph={{ url }} />
         <Component {...pageProps} />
-      </Layout>
-    </ProviderMobileMenu>
+      </ProviderMobileMenu>
+    </ChakraProvider>
   );
 };
 
