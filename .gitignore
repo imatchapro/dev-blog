@@ -35,7 +35,3 @@ yarn-error.log*
 
 #idea
 .idea
-
-# next-sitemap
-/public/sitemap.xml
-/public/robots.txt
