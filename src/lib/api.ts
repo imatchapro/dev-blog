@@ -1,7 +1,7 @@
 import { readdirSync, readFileSync } from 'fs';
 import { join } from 'path';
 import matter from 'gray-matter';
-import { PostData, PostMetaData, PostsPagesData } from '../types';
+import type { PostData, PostMetaData, PostsPagesData } from '../types';
 
 export async function getPostsData(): Promise<PostData[]> {
   const directory = join(process.cwd(), 'src/posts');
