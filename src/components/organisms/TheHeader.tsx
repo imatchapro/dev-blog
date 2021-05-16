@@ -1,6 +1,6 @@
 import React from 'react';
 import NextLink from 'next/link';
-import { Box, Button, Flex, HStack, Icon, Spacer, Text } from '@chakra-ui/react';
+import { Box, Button, Container, HStack, Icon, Link, Spacer, Text } from '@chakra-ui/react';
 import { FiMoon } from 'react-icons/fi';
 
 const TheHeader: React.VFC = () => {
@@ -8,24 +8,26 @@ const TheHeader: React.VFC = () => {
     <Box
       as="header"
       w="100%"
-      position="absolute"
+      position="fixed"
       borderBottomWidth={1}
       borderBottomColor="gray.200"
       borderBottomStyle="solid"
+      backgroundColor="white"
+      zIndex="sticky"
     >
-      <Flex maxW="container.xl" h={20} alignItems="center" mx="auto">
+      <Container maxW="container.xl" h={20} display="flex" alignItems="center">
         <Logo />
         <Spacer />
-        <HStack spacing={6}>
+        <HStack spacing={8}>
           <HStack spacing={4}>
             <MenuItem to="/blog">Blog</MenuItem>
             <MenuItem to="/works">Works</MenuItem>
           </HStack>
-          <Button size="sm" variant="ghost" px={0}>
+          <Button variant="ghost" size="md" px={0}>
             <Icon as={FiMoon} boxSize={5} />
           </Button>
         </HStack>
-      </Flex>
+      </Container>
     </Box>
   );
 };
@@ -34,7 +36,7 @@ const Logo: React.VFC = () => (
   <Box as="h1">
     <NextLink href="/" passHref>
       <Text as="a" fontSize="lg" fontWeight="bold">
-        {process.env.NEXT_PUBLIC_SITE_NAME}
+        YUTA TAKAHASHI
       </Text>
     </NextLink>
   </Box>
@@ -42,13 +44,11 @@ const Logo: React.VFC = () => (
 
 const MenuItem: React.FC<{ to: string }> = ({ to, children }) => {
   return (
-    <Box p={2}>
-      <NextLink href={to} passHref>
-        <Text as="a" color="gray.600" fontSize="sm" fontWeight={600}>
-          {children}
-        </Text>
-      </NextLink>
-    </Box>
+    <NextLink href={to} passHref>
+      <Link fontSize="sm" p={2}>
+        {children}
+      </Link>
+    </NextLink>
   );
 };
 

@@ -3,10 +3,8 @@ import type { AppProps } from 'next/app';
 import { DefaultSeo } from 'next-seo';
 import SEO from '../lib/next-seo';
 import 'prismjs';
-import ProviderMobileMenu from '../providers/ProviderMobileMenu';
-import '../styles/index.scss';
-import '../styles/markdown.scss';
 import 'prism-themes/themes/prism-nord.css';
+import ProviderMobileMenu from '../providers/ProviderMobileMenu';
 import useAbsoluteUrl from '../hooks/useAbsoluteUrl';
 import { ChakraProvider } from '@chakra-ui/react';
 
